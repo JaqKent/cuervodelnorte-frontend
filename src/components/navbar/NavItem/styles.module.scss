@@ -1,0 +1,29 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.text {
+  p {
+    font-size: 15px;
+    font-weight: $bold;
+    padding: 0 25px;
+    color: $white;
+  }
+}
+
+.label {
+  font-size: 25px;
+  font-weight: $bold;
+  &:hover {
+    color: $gray;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: lighter($primary, 35%);
+  }
+}
+
+.active {
+  color: lighter($primary, 35%);
+}

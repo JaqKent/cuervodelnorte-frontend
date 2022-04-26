@@ -1,6 +1,31 @@
 @import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
 .container {
-  background-color: #ccc;
-  width: 100%;
+  @include flex(space-between, flex-start, row);
+  background-color: $white;
+  min-width: 375px;
   height: 50px;
+  .links {
+    padding-left: 15px;
+    background-color: $primary;
+    width: 50%;
+    z-index: 100;
+    position: relative;
+  }
+  .hide {
+    display: none;
+  }
+
+  .button {
+    padding-left: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .cart {
+    padding-right: 15px;
+  }
 }
