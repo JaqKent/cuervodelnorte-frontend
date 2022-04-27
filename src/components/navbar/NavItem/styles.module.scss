@@ -2,17 +2,9 @@
 @import "scss/mixins";
 @import "scss/variable";
 
-.text {
-  p {
-    font-size: 15px;
-    font-weight: $bold;
-    padding: 0 25px;
-    color: $white;
-  }
-}
-
 .label {
-  font-size: 25px;
+  padding-left: 15px;
+  font-size: 15px;
   font-weight: $bold;
   &:hover {
     color: $gray;
@@ -26,4 +18,7 @@
 
 .active {
   color: lighter($primary, 35%);
+}
+.line {
+  border-bottom: 2px solid $white;
 }

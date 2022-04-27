@@ -4,28 +4,51 @@
 
 .container {
   @include flex(space-between, flex-start, row);
+
   background-color: $white;
   min-width: 375px;
-  height: 50px;
+  height: 60px;
+
   .links {
     padding-left: 15px;
     background-color: $primary;
+    color: $white;
     width: 50%;
-    z-index: 100;
-    position: relative;
+    border-radius: 0 15px 15px 0;
+    transition: 0.3s;
+    height: 667px;
   }
-  .hide {
+  .open {
+    @include flex(space-between, stretch, column);
+    background-color: $primary;
+    padding-right: 15px;
+  }
+  .close {
     display: none;
   }
 
   .button {
-    padding-left: 15px;
-    border: none;
-    background: transparent;
+    padding: 20px 0 0 20px;
     cursor: pointer;
+  }
+  .logo {
+    padding-top: 20px;
+    cursor: pointer;
+  }
+  .arrow {
+    @include flex(flex-start, center, row);
+    gap: 15px;
+    p {
+      font-size: 12px;
+    }
   }
 
   .cart {
-    padding-right: 15px;
+    padding: 20px 20px 0 0;
+    cursor: pointer;
+    &:hover {
+      color: blue;
+      cursor: pointer;
+    }
   }
 }
