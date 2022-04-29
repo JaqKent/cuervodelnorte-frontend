@@ -1,10 +1,9 @@
-import React from "react";
 import styles from "./styles.module.scss";
 
 interface Props {
   label?: string;
   onClick: () => void;
-  isActive?: Boolean;
+  isActive?: boolean;
 }
 function NavItem({ onClick, label, isActive }: Props) {
   const activation = () => {

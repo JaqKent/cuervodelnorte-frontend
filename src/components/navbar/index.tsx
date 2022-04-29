@@ -1,8 +1,8 @@
 import { useState } from "react";
 import NavItem from "./NavItem";
-import menu from "assets/Hamburger Icon.svg";
-import cart from "assets/Cart Icon.svg";
-import arrow from "assets/arrow-left.svg";
+import menu from "assets/hamburgerIcon.svg";
+import cart from "assets/cartIcon.svg";
+import arrow from "assets/arrowLeft.svg";
 import logo from "assets/logo.svg";
 
 import styles from "./styles.module.scss";
@@ -16,7 +16,7 @@ function NavBar() {
   return (
     <div className={styles.container}>
       <div className={`${open ? styles.links : ""}`}>
-        <div className={styles.button} onClick={handleToggle}>
+        <div className={`${open ? "" : styles.button}`} onClick={handleToggle}>
           {open ? (
             <div className={styles.arrow}>
               <img src={arrow} alt="volver" /> <p>Navegacion</p>
@@ -38,9 +38,8 @@ function NavBar() {
           </div>
         </div>
       </div>
-      <div>
+      <div className={styles.logo}>
         <img
-          className={styles.logo}
           onClick={() => console.log("home")}
           src={logo}
           alt="logo-cuervo-del-norte"
