@@ -7,26 +7,6 @@
   background-color: $white;
   min-width: 375px;
   height: 60px;
-  position: fixed;
-
-  .links {
-    padding: 0 15px 0 15px;
-    background-color: $primary;
-    color: $white;
-    width: 50%;
-    border-radius: 0 15px 15px 0;
-    transition: 0.3s;
-    height: 667px;
-    z-index: 100;
-  }
-  .open {
-    @include flex(space-between, stretch, column);
-    background-color: $primary;
-    height: calc(100% - 80px);
-  }
-  .close {
-    display: none;
-  }
 
   .button {
     padding: 20px 0 0 20px;
@@ -35,15 +15,6 @@
   .logo {
     padding-top: 20px;
     cursor: pointer;
-  }
-  .arrow {
-    @include flex(flex-start, stretch, row);
-    border-bottom: 2px solid $white;
-    padding-top: 15px;
-    gap: 15px;
-    p {
-      font-size: 12px;
-    }
   }
 
   .cart {
