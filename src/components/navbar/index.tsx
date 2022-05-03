@@ -10,9 +10,9 @@ import { animated, useTransition } from "react-spring";
 function NavBar() {
   const [open, setOpen] = useState(false);
   const transition = useTransition(open, {
-    from: { opacity: 0, transform: "translate3d(-50%,0,0)" },
-    enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
-    leave: { opacity: 0, transform: "translate3d(-50%,0,0)" },
+    from: { x: -100, opacity: 0 },
+    enter: { x: 0, opacity: 1 },
+    leave: { x: -100, opacity: 0 },
   });
 
   const handleToggle = () => {
