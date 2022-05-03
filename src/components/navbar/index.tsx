@@ -5,9 +5,15 @@ import logo from "assets/logo.svg";
 
 import styles from "./styles.module.scss";
 import Links from "./components/Links";
+import { useTransition } from "react-spring";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
+  const transition = useTransition(open, {
+    from: { opacity: 0, transform: "translate3d(-50%,0,0)" },
+    enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
+    leave: { opacity: 0, transform: "translate3d(-50%,0,0)" },
+  });
 
   const handleToggle = () => {
     setOpen(!open);
