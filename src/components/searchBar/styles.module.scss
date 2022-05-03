@@ -1,0 +1,22 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.container {
+  @include flex(center, center, row);
+  background-color: $primary;
+  min-width: 375px;
+  height: 60px;
+
+  .bar {
+    @include flex(center, center, row);
+    background-color: $white;
+    background-image: url("~assets/search.svg");
+    background-position: 10px 16px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    height: 40px;
+    min-width: 300px;
+    padding-left: 30px;
+  }
+}
