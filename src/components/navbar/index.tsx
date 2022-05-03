@@ -12,20 +12,20 @@ function NavBar() {
   const handleToggle = () => {
     setOpen(!open);
   };
+
   return (
     <>
-      {open ? <Links onClose={handleToggle} /> : null}
+      {open ? <Links onClose={handleToggle} /> : null}{" "}
       <div className={styles.container}>
-        <div className={`${open ? styles.links : ""}`}>
-          <div>
-            <img
-              className={styles.button}
-              src={menu}
-              alt="menu"
-              onClick={handleToggle}
-            />
-          </div>
+        <div>
+          <img
+            className={styles.button}
+            src={menu}
+            alt="menu"
+            onClick={handleToggle}
+          />
         </div>
+
         <div className={styles.logo}>
           <img
             onClick={() => console.log("home")}
