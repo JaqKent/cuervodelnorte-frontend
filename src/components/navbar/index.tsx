@@ -5,7 +5,7 @@ import logo from "assets/logo.svg";
 
 import styles from "./styles.module.scss";
 import Links from "./components/Links";
-import { useTransition } from "react-spring";
+import { animated, useTransition } from "react-spring";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -21,7 +21,17 @@ function NavBar() {
 
   return (
     <>
-      {open ? <Links onClose={handleToggle} /> : null}{" "}
+      <div>
+        {transition((style, item) => {
+          return (
+            item && (
+              <animated.div style={style}>
+                <Links onClose={handleToggle} />
+              </animated.div>
+            )
+          );
+        })}
+      </div>
       <div className={styles.container}>
         <div>
           <img
