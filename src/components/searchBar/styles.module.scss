@@ -1,0 +1,23 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.container {
+  @include flex(center, center, row);
+  background-color: $primary;
+  min-width: 375px;
+  height: 60px;
+
+  .bar {
+    @include flex(center, center, row);
+    background-color: rgba($white, 0.6);
+    background-image: url("~assets/search.svg");
+    background-position: 10px 16px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    border-style: none;
+    height: 40px;
+    min-width: 80%;
+    padding-left: 30px;
+  }
+}
