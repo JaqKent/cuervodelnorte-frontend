@@ -45,9 +45,9 @@
   }
 }
 
-/* @media all and (min-width: 500px) {
+@media all and (min-width: 500px) {
   .coments {
     @include flex(space-around, flex-start, row);
     height: 300px;
   }
-} */
+}
