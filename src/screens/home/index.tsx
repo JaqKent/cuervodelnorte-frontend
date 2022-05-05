@@ -32,7 +32,7 @@ function Home() {
               talking point 3
               <p>
                 mas texto con mas lineas para probar como se ve y como hace el
-                break
+                break y esas cosas magicas
               </p>
             </h4>
           </div>
