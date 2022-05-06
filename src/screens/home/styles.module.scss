@@ -15,11 +15,14 @@
     @include flex(space-between, stretch, column);
     width: 70%;
     min-height: 220px;
+
     @include responsive(md) {
-      .coments {
-        @include flex(space-between, center, row);
-        height: 400px;
-      }
+      @include flex(space-around, center, row);
+      height: 150px;
+      width: 95%;
+    }
+    @include responsive(lg) {
+      width: 90%;
     }
 
     .img {
@@ -30,8 +33,12 @@
       padding: 0 5px 0 15px;
       gap: 18px;
       @include responsive(md) {
-        height: 150px;
+        height: 100px;
         padding: 25px;
+        width: 200px;
+      }
+      @include responsive(lg) {
+        width: 250px;
       }
 
       .text {
@@ -52,12 +59,19 @@
           font-weight: lighter;
         }
         @include responsive(md) {
-          width: 300px;
           h4 {
-            font-size: 25px;
+            font-size: 15px;
           }
           p {
-            font-size: 15px;
+            font-size: 10px;
+          }
+        }
+        @include responsive(lg) {
+          h4 {
+            font-size: 20px;
+          }
+          p {
+            font-size: 12px;
           }
         }
       }
