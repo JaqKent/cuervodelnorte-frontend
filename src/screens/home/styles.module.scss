@@ -1,0 +1,80 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.container {
+  @include flex(space-around, center, column);
+  background-image: url("~assets/hillBackground.svg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  min-height: calc(100vh - 120px);
+  min-width: 375px;
+
+  .coments {
+    @include flex(space-between, stretch, column);
+    width: 70%;
+    min-height: 220px;
+
+    @include responsive(md) {
+      @include flex(space-around, center, row);
+      height: 150px;
+      width: 95%;
+    }
+    @include responsive(lg) {
+      width: 90%;
+    }
+
+    .img {
+      @include flex(flex-start, stretch, row);
+      height: 65px;
+      background-color: rgba(darken($black, 50%), 0.7);
+      border-radius: 5px;
+      padding: 0 5px 0 15px;
+      gap: 18px;
+      @include responsive(md) {
+        height: 100px;
+        padding: 25px;
+        width: 200px;
+      }
+      @include responsive(lg) {
+        width: 250px;
+      }
+
+      .text {
+        @include flex(flex-start, stretch, column);
+        color: $white;
+        word-wrap: break-word;
+        width: 150px;
+        padding-top: 5px;
+
+        h4 {
+          font-size: 10px;
+          font-weight: bold;
+          margin: 0;
+        }
+        p {
+          margin: 0;
+          font-size: 9px;
+          font-weight: lighter;
+        }
+        @include responsive(md) {
+          h4 {
+            font-size: 15px;
+          }
+          p {
+            font-size: 10px;
+          }
+        }
+        @include responsive(lg) {
+          h4 {
+            font-size: 20px;
+          }
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
