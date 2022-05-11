@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 
 function Footer() {
   return (
-    <div className={styles.container}>
+    <footer className={styles.container}>
       <div className={styles.sectionUp}>
         <div className={styles.follow}>
           <h3>¡SEGUINOS EN LAS REDES!</h3>
@@ -30,7 +30,7 @@ function Footer() {
       <div className={styles.cuervo}>
         <p>Cuervo del Norte 2022</p>
       </div>
-    </div>
+    </footer>
   );
 }
 
