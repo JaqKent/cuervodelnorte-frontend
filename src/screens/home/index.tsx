@@ -4,7 +4,7 @@ import { COMMENT } from "./constants";
 
 function Home() {
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <div>
         <img src={bigLogo} alt="logo-cuervo-del-norte" />
       </div>
@@ -21,7 +21,7 @@ function Home() {
           </div>
         ))}
       </div>
-    </div>
+    </main>
   );
 }
 
