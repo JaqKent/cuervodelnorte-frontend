@@ -1,0 +1,16 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.container {
+  @include flex(center, center, column);
+
+  .products {
+    p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
