@@ -1,0 +1,66 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.container {
+  @include flex(center, center, column);
+  background-color: $white;
+  min-width: 375px;
+
+  .title {
+    @include flex(flex-start, center, row);
+    background-color: $primary;
+    width: 100%;
+    padding-left: 18px;
+    gap: 15px;
+    color: $white;
+    height: 60px;
+    h4 {
+      font-weight: lighter;
+      font-size: 20px;
+    }
+    p {
+      font-size: 15px;
+    }
+    .arrow {
+      cursor: pointer;
+    }
+  }
+  .slider {
+  }
+  .carrousel {
+  }
+  .mini {
+  }
+  .text {
+    @include flex(flex-start, flex-start, column);
+    padding: 0 30px 0 30px;
+
+    .textUp {
+      @include flex(space-between, center, row);
+      width: 100%;
+    }
+    .textDown {
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+  .line {
+    @include flex(center, stretch, column);
+    border-bottom: 2px solid $primary;
+    padding: 15px;
+    width: 50%;
+  }
+  .button {
+    @include flex(flex-start, center, row);
+    margin: 30px 0 30px 0;
+    padding: 0 25px 0 20px;
+    background-color: $primary;
+    color: $white;
+    border-radius: 15px;
+    height: 60px;
+    width: 250px;
+    font-weight: bold;
+  }
+}

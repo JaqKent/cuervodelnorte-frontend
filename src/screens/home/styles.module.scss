@@ -27,6 +27,7 @@
 
     .img {
       @include flex(flex-start, stretch, row);
+
       height: 65px;
       background-color: rgba(darken($black, 50%), 0.7);
       border-radius: 5px;
