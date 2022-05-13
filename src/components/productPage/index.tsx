@@ -1,4 +1,5 @@
 import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
+import Carrousel from "components/carrousel";
 import styles from "./styles.module.scss";
 
 function ProductPage() {
@@ -16,7 +17,9 @@ function ProductPage() {
       </div>
       <div className={styles.slider}></div>
       <div>
-        <div className={styles.carrousel}>img</div>
+        <div className={styles.carrousel}>
+          <Carrousel />
+        </div>
         <div className={styles.mini}>mini</div>
       </div>
       <div className={styles.line}></div>
