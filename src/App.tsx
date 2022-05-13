@@ -8,7 +8,7 @@ function App() {
     <>
       <NavBar />
       <SearchBar />
-      <Home />
+
       <ProductIndex />
     </>
   );
