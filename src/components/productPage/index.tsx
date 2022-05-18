@@ -1,5 +1,6 @@
 import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
-import Carrousel from "components/carrousel";
+import Carousel from "components/carousel";
+import { products } from "./constants";
 import styles from "./styles.module.scss";
 
 function ProductPage() {
@@ -15,13 +16,9 @@ function ProductPage() {
         />
         <h4>Cartera industrial</h4> <p> $18.999</p>
       </div>
-      <div className={styles.slider}></div>
-      <div>
-        <div className={styles.carrousel}>
-          <Carrousel />
-        </div>
-        <div className={styles.mini}>mini</div>
-      </div>
+
+      <Carousel slides={products} />
+
       <div className={styles.line}></div>
       <div className={styles.text}>
         <div className={styles.textUp}>
@@ -39,7 +36,9 @@ function ProductPage() {
       </div>
       <div className={styles.line}></div>
 
-      <button className={styles.button}>Agregar al carrito</button>
+      <button className={styles.button} onClick={() => console.log("add")}>
+        Agregar al carrito
+      </button>
     </div>
   );
 }
