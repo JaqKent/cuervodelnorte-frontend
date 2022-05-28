@@ -1995,6 +1995,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-notify-toast@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@types/react-notify-toast/-/react-notify-toast-0.5.3.tgz#9a2e9038272c32658cf77f8b1beb7c51db3d1541"
+  integrity sha512-FK0URMZGScb1z+hQ0bKUkictmGBIbz/ybdtNLUYws6w+tJ6s7vROJLhxW1aR1F63WaxByxftWv5Uv9aj2LKjKg==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^18.0.0":
   version "18.0.6"
   resolved "https://registry.npmjs.org/@types/react/-/react-18.0.6.tgz"

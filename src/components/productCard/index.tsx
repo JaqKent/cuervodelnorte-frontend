@@ -1,16 +1,10 @@
-import yerbero from "assets/productYerbero.png";
 import { useNavigate } from "react-router-dom";
-import styles from "./styles.module.scss";
+import { notify } from "react-notify-toast";
 
-interface Props {
-  image: string[];
-  name: string;
-  price: number;
-  description?: string;
-  _id?: string;
-  stock: number;
-}
-function ProductCard({ image, name, price, description, _id, stock }: Props) {
+import styles from "./styles.module.scss";
+import { Product } from "interface/products";
+
+function ProductCard({ image, name, price, description, _id, stock }: Product) {
   const navigate = useNavigate();
 
   const handleViewProduct = () => {

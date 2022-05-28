@@ -15,7 +15,7 @@ function ProductCategory() {
         <h3>Nombre de la Categoria</h3>
         <p>(23 productos)</p>
       </div>
-      <div className={styles.card}>456</div>
+      <div className={styles.card}></div>
     </div>
   );
 }
