@@ -1,0 +1,30 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.container {
+  @include flex(center, center, column);
+
+  .bar {
+    @include flex(flex-start, center, row);
+    background-color: $primary;
+    min-width: 375px;
+    height: 60px;
+    gap: 10px;
+    color: $white;
+    padding-left: 20px;
+    h3 {
+      font-size: 15px;
+      font-weight: lighter;
+    }
+    p {
+      font-size: 11px;
+    }
+  }
+  .card {
+    padding: 15px 0 15px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+  }
+}

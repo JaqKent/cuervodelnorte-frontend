@@ -1,0 +1,54 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.container {
+  @include flex(center, center, column);
+  border: 1px solid $black;
+  width: 166px;
+  height: 300px;
+  .img {
+    width: 150px;
+    height: 205px;
+  }
+  .text {
+    width: 150px;
+    h4 {
+      font-size: 11px;
+      font-weight: lighter;
+      margin: 1px;
+    }
+    h3 {
+      margin: 1px;
+      font-size: 9px;
+      font-weight: bold;
+    }
+    p {
+      margin: 1px;
+      font-size: 9px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+.glow {
+  &:hover {
+    box-shadow: 0 0 2px 2px lighten($primary, 3);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.stock {
+  @extend %container;
+}
+
+.noStock {
+  @extend %container;
+
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
