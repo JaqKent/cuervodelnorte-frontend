@@ -10,10 +10,10 @@ import {
 import { notify } from "react-notify-toast";
 
 import { Product } from "interface/Products";
-import { getAllProducts, getProduct } from "services/ProductService";
 
 import { DEFAULT_PRODUCT, SortingType } from "./constants";
 import { sortProducts } from "./utils";
+import { getAllProducts, getProduct } from "services/ProductServices";
 
 interface ContextProps {
   products: Product[];

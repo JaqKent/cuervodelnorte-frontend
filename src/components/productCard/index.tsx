@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { notify } from "react-notify-toast";
 
 import styles from "./styles.module.scss";
-import { Product } from "interface/products";
+import { Product } from "interface/Products";
 
 function ProductCard({ image, name, price, description, _id, stock }: Product) {
   const navigate = useNavigate();
