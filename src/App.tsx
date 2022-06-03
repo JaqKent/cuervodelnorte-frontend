@@ -5,6 +5,7 @@ import ProductIndex from "screens/productIndex";
 import Home from "screens/Home";
 import { useEffect } from "react";
 import ReactGA from "react-ga";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "components/footer/Index";
 
 function App() {
@@ -12,14 +13,24 @@ function App() {
     ReactGA.initialize(process.env.REACT_APP_GA || "");
   }, []);
   return (
-    <>
+    <Router>
       <Notifications options={{ top: 60, zIndex: 9999 }} />
       <NavBar />
-      <SearchBar />
-      <Home />
-      <ProductIndex />
+      <Routes>
+        <Router
+          path="/"
+          element={
+            <>
+              <SearchBar />
+              <Home />
+              <ProductIndex />
+            </>
+          }
+        />
+        <Route path="/product" element={<ProductPage />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 
