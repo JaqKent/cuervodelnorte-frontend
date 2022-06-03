@@ -18,7 +18,7 @@ function App() {
       <Notifications options={{ top: 60, zIndex: 9999 }} />
       <NavBar />
       <Routes>
-        <Router
+        <Route
           path="/"
           element={
             <>
