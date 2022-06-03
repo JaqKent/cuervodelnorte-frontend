@@ -3,12 +3,19 @@ import { notify } from "react-notify-toast";
 
 import styles from "./styles.module.scss";
 import { Product } from "interface/Products";
+import {
+  GAProductActions,
+  GoogleAnalyticsEvents,
+} from "interface/GoogleAnalytics";
+import useGATracking from "Hooks/useGATracking";
 
 function ProductCard({ image, name, price, description, _id, stock }: Product) {
   const navigate = useNavigate();
+  const gaTracking = useGATracking(GoogleAnalyticsEvents.Product);
 
   const handleViewProduct = () => {
     navigate(`/product/${_id}`);
+    gaTracking(GAProductActions.Entered, name);
   };
   const handleNoStock = () => notify.show("Sin Stock", "warning");
   return (
@@ -23,7 +30,7 @@ function ProductCard({ image, name, price, description, _id, stock }: Product) {
         <img
           className={styles.img}
           src={image[0]}
-          alt="imagen producto"
+          alt={name}
           onClick={handleViewProduct}
         />
         <div className={styles.text}>

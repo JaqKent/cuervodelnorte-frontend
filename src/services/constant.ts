@@ -1,7 +1,7 @@
+import { CartItem } from "context/Cart/constants";
 import { Product } from "interface/Products";
-/* import { Info } from 'interface/Purchase';
-import { CartItem } from 'screens/Cart/constants';
- */
+import { Info } from "interface/Purchase";
+
 export interface APIResponse {
   success: boolean;
   message: string;
@@ -17,7 +17,7 @@ export interface SingleProductsResponse {
 }
 
 export interface Purchase {
-  /* products: CartItem[];
-  userInfo: Info; */
+  products: CartItem[];
+  userInfo: Info;
   amount: number;
 }
