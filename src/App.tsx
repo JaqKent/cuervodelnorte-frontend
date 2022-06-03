@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import ReactGA from "react-ga";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "components/footer/Index";
+import ProductPage from "components/productPage";
 
 function App() {
   useEffect(() => {
