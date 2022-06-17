@@ -11,6 +11,7 @@
 
   .products {
     @include flex(space-between, center, column);
+
     @include responsive(md) {
       @include flex(space-between, center, row);
       background-color: rgba(darken($primary, 15%), 0.8);
@@ -33,6 +34,7 @@
       .img {
         width: 375px;
         border-radius: 10px;
+
         @include responsive(sm) {
           width: 500px;
         }
