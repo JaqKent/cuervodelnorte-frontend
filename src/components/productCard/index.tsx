@@ -36,7 +36,7 @@ function ProductCard({ image, name, price, description, _id, stock }: Product) {
         <div className={styles.text}>
           <h4>{name}</h4>
           <p>{description}</p>
-          <h3>{price}</h3>
+          <h3>${price}</h3>
         </div>
       </div>
     </div>

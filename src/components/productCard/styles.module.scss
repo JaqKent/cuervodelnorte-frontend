@@ -43,11 +43,11 @@
 }
 
 .stock {
-  @extend %container;
+  @extend %container !optional;
 }
 
 .noStock {
-  @extend %container;
+  @extend %container !optional;
 
   filter: grayscale(100%);
   opacity: 0.5;

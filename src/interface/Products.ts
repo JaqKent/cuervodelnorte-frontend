@@ -7,7 +7,6 @@ export interface Product {
   image: string[];
   description?: string;
   discount?: number;
-
   createdAt?: string;
   updatedAt?: string;
 }

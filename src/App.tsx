@@ -8,6 +8,7 @@ import ReactGA from "react-ga";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "components/footer/Index";
 import ProductPage from "components/productPage";
+import ProductCategory from "components/productCategory";
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
             </>
           }
         />
+        <Route path="/productcategory" element={<ProductCategory />} />
         <Route path="/product" element={<ProductPage />} />
       </Routes>
       <Footer />
