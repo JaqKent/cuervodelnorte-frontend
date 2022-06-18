@@ -33,7 +33,6 @@ function ProductIndex() {
             onClick={() => handleSelect(sort.id)}
             name={sort.name}
             isSelected={currentSelected === sort.id}
-            text={sort.text}
             img={sort.img}
           />
           {index !== SORT_TYPE.length - 1 && (

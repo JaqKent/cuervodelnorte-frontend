@@ -1,40 +1,34 @@
-import yerbero from "assets/productYerbero.png";
 import { SortingType } from "context/Product/constants";
+import yerbero from "assets/productYerbero.png";
+import bolso from "assets/bolso.jpg";
+import cartera from "assets/cartera.png";
+import kitmate from "assets/kitMate.jpg";
+import riñonera from "assets/Riñonera.jpg";
 
 export const SORT_TYPE = [
   {
     id: SortingType.Wallets,
     img: yerbero,
     name: "Yerbero",
-    text: "Yerbero,excelente calidad, a prueba de agua, fuego, aire, tierra y el modo avatar. tambien funca para llevar la yerba seca en un apocalipsis zombie. Noice",
-    price: "$12.222",
   },
   {
     id: SortingType.Purses,
-    img: yerbero,
-    name: "billetera",
-    text: "Yerbero,excelente calidad, a prueba de agua, fuego, aire, tierra y el modo avatar. tambien funca para llevar la yerba seca en un apocalipsis zombie. Noice 2",
-    price: "$12.222",
+    img: cartera,
+    name: "Billetera",
   },
   {
     id: SortingType.Backpacks,
-    img: yerbero,
-    name: "bolso",
-    text: "Yerbero,excelente calidad, a prueba de agua, fuego, aire, tierra y el modo avatar. tambien funca para llevar la yerba seca en un apocalipsis zombie. Noice 3",
-    price: "$12.222",
+    img: bolso,
+    name: "Bolso",
   },
   {
     id: SortingType.Bags,
-    img: yerbero,
-    name: "kitMatero",
-    text: "Yerbero,excelente calidad, a prueba de agua, fuego, aire, tierra y el modo avatar. tambien funca para llevar la yerba seca en un apocalipsis zombie. Noice 3",
-    price: "$12.222",
+    img: kitmate,
+    name: "KitMatero",
   },
   {
     id: SortingType.Accesories,
-    img: yerbero,
+    img: riñonera,
     name: "Accesorios",
-    text: "Yerbero,excelente calidad, a prueba de agua, fuego, aire, tierra y el modo avatar. tambien funca para llevar la yerba seca en un apocalipsis zombie. Noice 3",
-    price: "$12.222",
   },
 ];

@@ -11,4 +11,14 @@
   .separator {
     display: none;
   }
+  @include responsive(md) {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 15px;
+  }
+  @include responsive(xlg) {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 15px;
+  }
 }

@@ -2,13 +2,13 @@ import styles from "./styles.module.scss";
 
 interface Props {
   img: string;
-  text: string;
+
   name: string;
   isSelected: boolean;
   onClick: () => void;
 }
 
-function Item({ name, onClick, isSelected, img, text }: Props) {
+function Item({ name, onClick, isSelected, img }: Props) {
   return (
     <div className={styles.products}>
       <div
@@ -19,9 +19,6 @@ function Item({ name, onClick, isSelected, img, text }: Props) {
           <p>{name}</p>
         </div>
         <img className={styles.img} src={img} alt="producto Yerbero" />
-      </div>
-      <div className={styles.text}>
-        <p>{text}</p>
       </div>
     </div>
   );

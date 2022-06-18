@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { animated, useTransition } from "react-spring";
+import { useNavigate } from "react-router-dom";
+import Links from "./components/Links";
 import menu from "assets/hamburgerIcon.svg";
 import cart from "assets/cartIcon.svg";
 import logo from "assets/logo.svg";
 
 import styles from "./styles.module.scss";
-import Links from "./components/Links";
-import { animated, useTransition } from "react-spring";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -14,6 +15,11 @@ function NavBar() {
     enter: { x: 0, opacity: 1 },
     leave: { x: -100, opacity: 0 },
   });
+
+  const navigate = useNavigate();
+  const handleHome = () => {
+    navigate(`/`);
+  };
 
   const handleToggle = () => {
     setOpen(!open);
@@ -26,7 +32,7 @@ function NavBar() {
           return (
             item && (
               <animated.div style={style}>
-                <Links onClose={handleToggle} />
+                <Links onClose={handleHome} />
               </animated.div>
             )
           );

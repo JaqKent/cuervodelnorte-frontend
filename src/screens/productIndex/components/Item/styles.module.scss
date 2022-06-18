@@ -4,15 +4,15 @@
 
 .products {
   @include flex(space-between, center, column);
-  @include responsive(md) {
-    @include flex(space-between, center, row);
+  @include responsive(sm) {
     background-color: rgba(darken($primary, 15%), 0.8);
-    margin: 10px;
+    padding: 10px;
+    margin: 5px 0;
     border-radius: 10px;
-  }
-
-  @include responsive(lg) {
-    @include flex(space-between, center, row);
+    @include responsive(lg) {
+      padding: 10px;
+      margin: 10px;
+    }
   }
 
   .section {
@@ -27,7 +27,7 @@
       width: 375px;
       border-radius: 10px;
       @include responsive(sm) {
-        width: 500px;
+        width: 400px;
       }
     }
     .title {
@@ -41,23 +41,6 @@
     }
   }
 
-  .text {
-    p {
-      display: none;
-    }
-    @include responsive(md) {
-      padding: 15px;
-      p {
-        display: block;
-        font-size: 30px;
-      }
-    }
-    @include responsive(lg) {
-      p {
-        display: block;
-      }
-    }
-  }
   .selected {
     border: $primary;
   }
