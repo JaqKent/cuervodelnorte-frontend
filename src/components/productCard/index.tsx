@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { notify } from "react-notify-toast";
-
-import styles from "./styles.module.scss";
 import { Product } from "interface/Products";
 import {
   GAProductActions,
   GoogleAnalyticsEvents,
 } from "interface/GoogleAnalytics";
 import useGATracking from "Hooks/useGATracking";
+import styles from "./styles.module.scss";
 
 function ProductCard({ image, name, price, description, _id, stock }: Product) {
   const navigate = useNavigate();

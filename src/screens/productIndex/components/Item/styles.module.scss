@@ -25,9 +25,15 @@
 
     .img {
       width: 375px;
+      height: 375px;
       border-radius: 10px;
-      @include responsive(sm) {
+      @include responsive(md) {
+        width: 300px;
+        height: 300px;
+      }
+      @include responsive(lg) {
         width: 400px;
+        height: 400px;
       }
     }
     .title {

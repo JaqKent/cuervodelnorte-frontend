@@ -32,7 +32,7 @@ function NavBar() {
           return (
             item && (
               <animated.div style={style}>
-                <Links onClose={handleHome} />
+                <Links onClose={handleToggle} />
               </animated.div>
             )
           );
@@ -49,11 +49,7 @@ function NavBar() {
         </div>
 
         <div className={styles.logo}>
-          <img
-            onClick={() => console.log("home")}
-            src={logo}
-            alt="logo-cuervo-del-norte"
-          />
+          <img onClick={handleHome} src={logo} alt="logo-cuervo-del-norte" />
         </div>
         <div>
           <img

@@ -44,6 +44,7 @@ function Links({ onClose }: Props) {
                 <NavItem
                   onClick={() => handleLink(sort.id)}
                   label={sort.name}
+                  isActive={currentSelected === sort.id}
                 />
               </div>
             ))}
