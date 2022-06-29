@@ -11,7 +11,7 @@ import styles from "./styles.module.scss";
 function ProductCard({ image, name, price, description, _id, stock }: Product) {
   const navigate = useNavigate();
   const gaTracking = useGATracking(GoogleAnalyticsEvents.Product);
-
+  console.log(name, price);
   const handleViewProduct = () => {
     navigate(`/product/${_id}`);
     gaTracking(GAProductActions.Entered, name);

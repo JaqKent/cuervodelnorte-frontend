@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "components/footer/Index";
 import ProductPage from "components/productPage";
 import ProductCategory from "components/productCategory";
+import ProductsProvider from "context/Product";
 
 function App() {
   useEffect(() => {
@@ -18,20 +19,22 @@ function App() {
     <Router>
       <Notifications options={{ top: 60, zIndex: 9999 }} />
       <NavBar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <SearchBar />
-              <Home />
-              <ProductIndex />
-            </>
-          }
-        />
-        <Route path="/productcategory" element={<ProductCategory />} />
-        <Route path="/product" element={<ProductPage />} />
-      </Routes>
+      <ProductsProvider>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <SearchBar />
+                <Home />
+                <ProductIndex />
+              </>
+            }
+          />
+          <Route path="/productcategory/:id" element={<ProductCategory />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+        </Routes>
+      </ProductsProvider>
       <Footer />
     </Router>
   );

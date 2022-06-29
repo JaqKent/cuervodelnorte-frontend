@@ -10,12 +10,14 @@ import LoadingSpinner from "components/loadingSpinner";
 
 function ProductCategory() {
   const { isLoading, products } = useContext(ProductsContext);
-  const [productsList] = useState<Product[]>([]);
   const navigate = useNavigate();
 
   const handleBack = () => {
     navigate(`/`);
   };
+
+  console.log(isLoading);
+
   return (
     <div className={styles.container}>
       {isLoading ? (
@@ -29,7 +31,7 @@ function ProductCategory() {
           </div>
           {products?.length ? (
             <div className={styles.card}>
-              {productsList.map((product) => (
+              {products.map((product) => (
                 <ProductCard {...product} key={product._id} />
               ))}
             </div>
