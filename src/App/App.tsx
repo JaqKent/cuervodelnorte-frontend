@@ -8,10 +8,10 @@ import ProductPage from "components/ProductPage";
 import ProductCategory from "components/ProductCategory";
 import ProductsProvider from "context/Product";
 import ProductIndex from "screens/productIndex";
-import Home from "screens/Home";
 
 import { notifications } from "./constant";
 import Footer from "components/footer/Index";
+import Home from "screens/home";
 
 function App() {
   useEffect(() => {
