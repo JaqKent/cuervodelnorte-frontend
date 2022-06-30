@@ -1,22 +1,34 @@
+import { SortingType } from "context/Product/constants";
 import yerbero from "assets/productYerbero.png";
+import bolso from "assets/bolso.jpg";
+import cartera from "assets/cartera.png";
+import kitmate from "assets/kitMate.jpg";
+import riñonera from "assets/Riñonera.jpg";
 
-export const Product = [
+export const SORT_TYPE = [
   {
-    id: 1,
+    id: SortingType.Wallets,
     img: yerbero,
-    title: "Yerbero",
-    text: "Yerbero,excelente calidad, a prueba de agua, fuego, aire, tierra y el modo avatar. tambien funca para llevar la yerba seca en un apocalipsis zombie. Noice",
+    name: "Yerbero",
   },
   {
-    id: 2,
-    img: yerbero,
-    title: "Yerbero",
-    text: "Yerbero,excelente calidad, a prueba de agua, fuego, aire, tierra y el modo avatar. tambien funca para llevar la yerba seca en un apocalipsis zombie. Noice 2",
+    id: SortingType.Purses,
+    img: cartera,
+    name: "Billetera",
   },
   {
-    id: 3,
-    img: yerbero,
-    title: "Yerbero",
-    text: "Yerbero,excelente calidad, a prueba de agua, fuego, aire, tierra y el modo avatar. tambien funca para llevar la yerba seca en un apocalipsis zombie. Noice 3",
+    id: SortingType.Backpacks,
+    img: bolso,
+    name: "Bolso",
+  },
+  {
+    id: SortingType.Bags,
+    img: kitmate,
+    name: "KitMatero",
+  },
+  {
+    id: SortingType.Accesories,
+    img: riñonera,
+    name: "Accesorios",
   },
 ];

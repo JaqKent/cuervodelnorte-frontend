@@ -1,0 +1,57 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.products {
+  @include flex(space-between, center, column);
+  @include responsive(sm) {
+    background-color: rgba(darken($primary, 15%), 0.8);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    @include responsive(lg) {
+      padding: 10px;
+      margin: 10px;
+    }
+  }
+
+  .section {
+    position: relative;
+    display: inline-block;
+
+    @include responsive(md) {
+      padding: 25px;
+    }
+
+    .img {
+      width: 375px;
+      height: 375px;
+      border-radius: 10px;
+      @include responsive(md) {
+        width: 300px;
+        height: 300px;
+      }
+      @include responsive(lg) {
+        width: 400px;
+        height: 400px;
+      }
+    }
+    .title {
+      @include flex(center, center, row);
+      margin-top: 15px;
+      height: 25px;
+      width: 100px;
+      background-color: rgba(darken($black, 50%), 0.5);
+      position: absolute;
+      left: 35%;
+    }
+  }
+
+  .selected {
+    border: $primary;
+  }
+
+  .notSelected {
+    color: $white;
+  }
+}
