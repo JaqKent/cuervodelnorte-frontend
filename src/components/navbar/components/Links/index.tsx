@@ -1,17 +1,17 @@
-import NavItem from "../NavItem";
-import arrow from "assets/arrowLeft.svg";
-
-import styles from "./styles.module.scss";
-import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { ProductsContext } from "context/Product";
-import { SortingType } from "context/Product/constants";
-import useGATracking from "Hooks/useGATracking";
+import { useNavigate } from "react-router-dom";
 import {
   GAStoreActions,
   GoogleAnalyticsEvents,
 } from "interface/GoogleAnalytics";
+import useGATracking from "Hooks/useGATracking";
+import { ProductsContext } from "context/Product";
+import { SortingType } from "context/Product/constants";
 import { SORT_TYPE } from "screens/productIndex/constants";
+
+import arrow from "assets/arrowLeft.svg";
+import styles from "./styles.module.scss";
+import NavItem from "../NavItem";
 
 interface Props {
   onClose: () => void;

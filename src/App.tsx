@@ -1,15 +1,15 @@
-import NavBar from "components/navbar";
+import { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ReactGA from "react-ga";
 import Notifications from "react-notify-toast";
-import SearchBar from "components/searchBar";
+import NavBar from "components/NavBar";
+import SearchBar from "components/SearchBar";
+import ProductPage from "components/ProductPage";
+import ProductCategory from "components/ProductCategory";
+import ProductsProvider from "context/Product";
 import ProductIndex from "screens/productIndex";
 import Home from "screens/Home";
-import { useEffect } from "react";
-import ReactGA from "react-ga";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Footer from "components/footer/Index";
-import ProductPage from "components/productPage";
-import ProductCategory from "components/productCategory";
-import ProductsProvider from "context/Product";
+import Footer from "components/Footer/Index";
 
 function App() {
   useEffect(() => {

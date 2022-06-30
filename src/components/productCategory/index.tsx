@@ -1,12 +1,12 @@
-import ProductCard from "components/productCard";
+import ProductCard from "components/ProductCard";
 import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
 import styles from "./styles.module.scss";
 
-import { useContext, useState } from "react";
-import { Product } from "interface/Products";
+import { useContext } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { ProductsContext } from "context/Product";
-import LoadingSpinner from "components/loadingSpinner";
+import LoadingSpinner from "components/LoadingSpinner";
 
 function ProductCategory() {
   const { isLoading, products } = useContext(ProductsContext);

@@ -24,7 +24,7 @@ import {
   removeProduct,
 } from "./utils";
 import { CartItem } from "./constants";
-import LoadingSpinner from "components/loadingSpinner";
+import LoadingSpinner from "components/LoadingSpinner";
 
 interface ContextProps {
   productList: CartItem[];

@@ -1,5 +1,5 @@
 import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
-import Carousel from "components/carrousel";
+import Carousel from "components/Carrousel";
 import { products } from "./constants";
 
 import styles from "./styles.module.scss";
