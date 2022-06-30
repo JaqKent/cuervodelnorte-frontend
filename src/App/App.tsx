@@ -9,8 +9,9 @@ import ProductCategory from "components/ProductCategory";
 import ProductsProvider from "context/Product";
 import ProductIndex from "screens/productIndex";
 import Home from "screens/Home";
-import Footer from "components/Footer";
+
 import { notifications } from "./constant";
+import Footer from "components/footer/Index";
 
 function App() {
   useEffect(() => {
