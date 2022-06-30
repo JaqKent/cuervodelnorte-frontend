@@ -2,16 +2,18 @@ import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ReactGA from "react-ga";
 import Notifications from "react-notify-toast";
-import NavBar from "components/NavBar";
-import SearchBar from "components/SearchBar";
-import ProductPage from "components/ProductPage";
+
 import ProductCategory from "components/ProductCategory";
 import ProductsProvider from "context/Product";
 import ProductIndex from "screens/productIndex";
 
 import { notifications } from "./constant";
-import Footer from "components/footer/Index";
-import Home from "screens/home";
+
+import ProductPage from "components/ProductPage";
+import SearchBar from "components/SearchBar";
+import Home from "screens/Home";
+import Footer from "components/Footer/index";
+import NavBar from "components/NavBar";
 
 function App() {
   useEffect(() => {
