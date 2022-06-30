@@ -1,6 +1,6 @@
-import styles from "./styles.module.scss";
 import bigLogo from "assets/cuervoLogo.svg";
 import { COMMENT } from "./constants";
+import styles from "./styles.module.scss";
 
 function Home() {
   return (
