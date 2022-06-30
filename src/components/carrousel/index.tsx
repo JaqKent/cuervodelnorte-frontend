@@ -8,7 +8,7 @@ import {
 import styles from "./styles.module.scss";
 
 interface Props {
-  slides: any;
+  slides: string[];
 }
 
 function Carousel({ slides }: Props) {

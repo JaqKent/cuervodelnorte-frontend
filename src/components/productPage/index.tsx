@@ -1,7 +1,7 @@
-import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
 import Carousel from "components/Carrousel";
 import { products } from "./constants";
 
+import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
 import styles from "./styles.module.scss";
 
 function ProductPage() {

@@ -1,14 +1,16 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { ProductsContext } from "context/Product";
-import { SortingType } from "context/Product/constants";
-import { SORT_TYPE } from "./constants";
-import Item from "./components/Item";
 import useGATracking from "Hooks/useGATracking";
 import {
   GAStoreActions,
   GoogleAnalyticsEvents,
 } from "interface/GoogleAnalytics";
+
+import { ProductsContext } from "context/Product";
+import { SortingType } from "context/Product/constants";
+import { SORT_TYPE } from "./constants";
+import Item from "./components/Item";
+
 import styles from "./styles.module.scss";
 
 function ProductIndex() {

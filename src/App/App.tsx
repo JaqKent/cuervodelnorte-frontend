@@ -9,7 +9,8 @@ import ProductCategory from "components/ProductCategory";
 import ProductsProvider from "context/Product";
 import ProductIndex from "screens/productIndex";
 import Home from "screens/Home";
-import Footer from "components/Footer/Index";
+import Footer from "components/Footer";
+import { notifications } from "./constant";
 
 function App() {
   useEffect(() => {
@@ -17,7 +18,7 @@ function App() {
   }, []);
   return (
     <Router>
-      <Notifications options={{ top: 60, zIndex: 9999 }} />
+      <Notifications options={notifications} />
       <NavBar />
       <ProductsProvider>
         <Routes>

@@ -1,12 +1,13 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { ProductsContext } from "context/Product";
+
 import ProductCard from "components/ProductCard";
+import LoadingSpinner from "components/LoadingSpinner";
+
 import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
 import styles from "./styles.module.scss";
-
-import { useContext } from "react";
-
-import { useNavigate } from "react-router-dom";
-import { ProductsContext } from "context/Product";
-import LoadingSpinner from "components/LoadingSpinner";
 
 function ProductCategory() {
   const { isLoading, products } = useContext(ProductsContext);
@@ -15,8 +16,6 @@ function ProductCategory() {
   const handleBack = () => {
     navigate(`/`);
   };
-
-  console.log(isLoading);
 
   return (
     <div className={styles.container}>
