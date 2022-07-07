@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import paths from "App/paths";
 import Carousel from "components/Carrousel";
 import { Product } from "interface/Products";
 import { CartContext } from "context/Cart";
 
 import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
 import styles from "./styles.module.scss";
-import paths from "App/paths";
 
 interface Props {
   product: Product;
@@ -14,7 +14,7 @@ interface Props {
 
 function ProductPage({ product }: Props) {
   const navigate = useNavigate();
-  const { addProductToCart, removeModal, ShowModal } = useContext(CartContext);
+  const { addProductToCart, removeModal } = useContext(CartContext);
 
   const [quantity, setQuantity] = useState(1);
 
@@ -27,7 +27,7 @@ function ProductPage({ product }: Props) {
     removeModal();
   };
 
-  const handlegoToStore = () => {
+  const handleGoToStore = () => {
     navigate(paths.store);
     removeModal();
   };
