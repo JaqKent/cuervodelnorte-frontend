@@ -51,11 +51,7 @@ function Carousel({ slides }: Props) {
             key={slide}
           >
             {index === current && (
-              <img
-                src={slide.image}
-                className={styles.image}
-                alt="product-imag"
-              />
+              <img src={slide} className={styles.image} alt={slide} />
             )}
           </div>
         ))}
@@ -72,10 +68,10 @@ function Carousel({ slides }: Props) {
           {slides.map((slide, index) => (
             <img
               key={slide}
-              src={slide.image}
+              src={slide}
               className={styles.mini}
               onClick={() => changeToSlide(index)}
-              alt="mini-img"
+              alt={slide}
             />
           ))}
         </div>

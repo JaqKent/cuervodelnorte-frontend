@@ -36,7 +36,7 @@ function App() {
             }
           />
           <Route path="/productcategory/:id" element={<ProductCategory />} />
-          <Route path="/product/:id" element={<ProductPage />} />
+         {/*  <Route path="/product/:id" element={<ProductPage />} /> */}
         </Routes>
       </ProductsProvider>
       <Footer />
