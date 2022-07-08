@@ -31,7 +31,7 @@ interface ContextProps {
   addProductToCart: (product: Product, quantity: number) => void;
   removeProductFromCart: (productId: string) => void;
   showModal: boolean;
-  removeModal: () => void;
+  setShowModal: () => void;
   checkout: (info: Info) => void;
 }
 
@@ -40,14 +40,14 @@ export const CartContext = createContext<ContextProps>({
   addProductToCart: () => {},
   removeProductFromCart: () => {},
   showModal: false,
-  removeModal: () => {},
+  setShowModal: () => {},
   checkout: () => {},
 });
 
 export default function CartProvider({ children }: { children: ReactNode }) {
   const [loadingText, setLoadingText] = useState("");
   const [productList, setProductList] = useState<CartItem[]>([]);
-  const [showModal, removeModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const history = useNavigate();
   const { gatherProducts } = useContext(ProductsContext);
   const trackGA = useGATracking(GoogleAnalyticsEvents.Cart);
@@ -61,14 +61,14 @@ export default function CartProvider({ children }: { children: ReactNode }) {
           GACartActions.AddedProduct,
           `${product.name}, cantidad: ${quantity}`
         );
-        removeModal(true);
+        setShowModal(true);
       } catch (err) {
-        removeModal(false);
+        setShowModal(false);
         trackGA(GAGlobalActions.Issue);
         notify.show("Agregar al Carrito", "warning");
       }
     } else {
-      removeModal(false);
+      setShowModal(false);
       trackGA(GAGlobalActions.Issue);
       notify.show("Sin Stock", "warning");
     }
@@ -119,7 +119,7 @@ export default function CartProvider({ children }: { children: ReactNode }) {
     addProductToCart,
     removeProductFromCart,
     showModal,
-    removeModal: () => removeModal(false),
+    setShowModal: () => setShowModal(false),
     checkout,
   };
 
