@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Carousel from "components/Carrousel";
+import CustomModal from "components/CustomModal";
 import { Product } from "interface/Products";
 import { CartContext } from "context/Cart";
 
 import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
 import styles from "./styles.module.scss";
-import CustomModal from "components/CustomModal";
 
 interface Props {
   product: Product;
