@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { ProductsContext } from "context/Product";
-
 import ProductCard from "components/ProductCard";
 import LoadingSpinner from "components/LoadingSpinner";
 
@@ -25,8 +24,9 @@ function ProductCategory() {
         <>
           <div className={styles.bar}>
             <Arrow width={15} height={15} fill="#fff" onClick={handleBack} />
-            <h3>Nombre de la Categoria</h3>
-            <p>(23 productos)</p>
+
+            <h3>productname</h3>
+            <p>a</p>
           </div>
           {products?.length ? (
             <div className={styles.card}>
