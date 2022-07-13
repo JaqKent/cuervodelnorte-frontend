@@ -11,6 +11,15 @@
     width: 150px;
     height: 205px;
   }
+  @include responsive(md) {
+    border: 1px solid $black;
+    width: 300px;
+    height: 500px;
+    .img {
+      width: 290px;
+      height: 350px;
+    }
+  }
   .text {
     width: 150px;
     h4 {
@@ -20,17 +29,35 @@
     }
     h3 {
       margin: 1px;
-      font-size: 9px;
+      font-size: 12px;
       font-weight: bold;
     }
     p {
       margin: 1px;
-      font-size: 9px;
+      font-size: 10px;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    @include responsive(md) {
+      width: 280px;
+      height: 140px;
+
+      h4 {
+        font-size: 20px;
+      }
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      p {
+        font-size: 15px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 }

@@ -9,12 +9,12 @@ import ProductIndex from "screens/productIndex";
 
 import { notifications } from "./constant";
 
-import ProductPage from "components/ProductPage";
+import ProductScreen from "components/ProductScreen";
+
 import SearchBar from "components/SearchBar";
 import Home from "screens/Home";
 import Footer from "components/Footer/index";
 import NavBar from "components/NavBar";
-import CustomModal from "components/CustomModal";
 
 function App() {
   useEffect(() => {
@@ -37,7 +37,7 @@ function App() {
             }
           />
           <Route path="/productcategory/:id" element={<ProductCategory />} />
-          {/*  <Route path="/product/:id" element={<ProductPage />} /> */}
+          <Route path="/product/:id" element={<ProductScreen />} />
         </Routes>
       </ProductsProvider>
       <Footer />

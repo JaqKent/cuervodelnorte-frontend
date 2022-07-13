@@ -2,7 +2,6 @@ import styles from "./styles.module.scss";
 
 interface Props {
   img: string;
-
   name: string;
   isSelected: boolean;
   onClick: () => void;
@@ -18,7 +17,7 @@ function Item({ name, onClick, isSelected, img }: Props) {
         <div className={styles.title}>
           <p>{name}</p>
         </div>
-        <img className={styles.img} src={img} alt="producto Yerbero" />
+        <img className={styles.img} src={img} alt={name} />
       </div>
     </div>
   );
