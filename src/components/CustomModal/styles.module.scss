@@ -5,9 +5,10 @@
 .container {
   @include flex(center, center, column);
   background-color: rgba(black, 0.5);
-  min-width: 375px;
-  height: 100vh;
-  z-index: 9000;
+  min-width: 100%;
+  height: 90vh;
+  z-index: 9;
+  position: fixed;
 
   .content {
     @include flex(center, center, column);

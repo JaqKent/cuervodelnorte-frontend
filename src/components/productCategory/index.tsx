@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { ProductsContext } from "context/Product";
 import ProductCard from "components/ProductCard";
@@ -15,6 +15,31 @@ function ProductCategory() {
   const handleBack = () => {
     navigate(`/`);
   };
+  const categoryStock = products.length;
+
+  const { id } = useParams<string>();
+
+  const categoryId = (id: string | undefined) => {
+    switch (id) {
+      case "1":
+        return "Yerberos";
+
+      case "2":
+        return "Billeteras";
+
+      case "3":
+        return "Bolsos";
+
+      case "4":
+        return "KitMatero";
+
+      case "5":
+        return "Accesorios";
+
+      default:
+        return "";
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -25,8 +50,11 @@ function ProductCategory() {
           <div className={styles.bar}>
             <Arrow width={15} height={15} fill="#fff" onClick={handleBack} />
 
-            <h3>productname</h3>
-            <p>a</p>
+            <h3>{categoryId(id)}</h3>
+            <p>
+              ({categoryStock ? categoryStock : "Sin"}
+              {categoryStock === 1 ? " Producto" : " productos"})
+            </p>
           </div>
           {products?.length ? (
             <div className={styles.card}>
