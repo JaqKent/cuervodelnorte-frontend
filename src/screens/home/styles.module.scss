@@ -11,6 +11,15 @@
   min-height: calc(100vh - 120px);
   min-width: 375px;
 
+  .logo {
+    height: 198px;
+    width: 192px;
+    @include responsive(md) {
+      height: 300px;
+      width: 300px;
+    }
+  }
+
   .coments {
     @include flex(space-between, stretch, column);
     width: 70%;

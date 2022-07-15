@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Links from "./components/Links";
 import menu from "assets/hamburgerIcon.svg";
 import cart from "assets/cartIcon.svg";
-import logo from "assets/logo.svg";
+import logo from "assets/logoNegro.png";
 
 import styles from "./styles.module.scss";
 
@@ -48,8 +48,13 @@ function NavBar() {
           />
         </div>
 
-        <div className={styles.logo}>
-          <img onClick={handleHome} src={logo} alt="logo-cuervo-del-norte" />
+        <div>
+          <img
+            className={styles.logo}
+            onClick={handleHome}
+            src={logo}
+            alt="logo-cuervo-del-norte"
+          />
         </div>
         <div>
           <img

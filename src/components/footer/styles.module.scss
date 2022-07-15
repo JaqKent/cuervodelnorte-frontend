@@ -52,4 +52,13 @@
       font-size: 15px;
     }
   }
+  .links {
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: $white;
+      text-decoration: none;
+    }
+  }
 }

@@ -5,19 +5,19 @@
 .container {
   @include flex(center, center, column);
   border: 1px solid $black;
-  width: 166px;
   height: 300px;
+  width: 166px;
   .img {
-    width: 150px;
     height: 205px;
+    width: 150px;
   }
   @include responsive(md) {
     border: 1px solid $black;
-    width: 300px;
     height: 500px;
+    width: 300px;
     .img {
-      width: 290px;
       height: 350px;
+      width: 290px;
     }
   }
   .text {
@@ -28,22 +28,22 @@
       margin: 1px;
     }
     h3 {
-      margin: 1px;
       font-size: 12px;
       font-weight: bold;
+      margin: 1px;
     }
     p {
-      margin: 1px;
       font-size: 10px;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
+      margin: 1px;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     @include responsive(md) {
-      width: 280px;
       height: 140px;
+      width: 280px;
 
       h4 {
         font-size: 20px;
@@ -54,9 +54,8 @@
       }
       p {
         font-size: 15px;
-
-        overflow: hidden;
         text-overflow: ellipsis;
+        overflow: hidden;
       }
     }
   }
