@@ -1,4 +1,4 @@
-import bigLogo from "assets/cuervoLogo.svg";
+import bigLogo from "assets/cuervologo.png";
 import { COMMENT } from "./constants";
 import styles from "./styles.module.scss";
 
@@ -6,7 +6,11 @@ function Home() {
   return (
     <main className={styles.container}>
       <div>
-        <img src={bigLogo} alt="logo-cuervo-del-norte" />
+        <img
+          className={styles.logo}
+          src={bigLogo}
+          alt="logo-cuervo-del-norte"
+        />
       </div>
       <div className={styles.coments}>
         {COMMENT.map((data) => (

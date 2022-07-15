@@ -5,7 +5,7 @@ import ProductPage from "components/ProductPage";
 import { ProductsContext } from "context/Product";
 
 function ProductScreen() {
-  const { id } = useParams<any>();
+  const { id } = useParams<string>();
   const { gatherSingleProduct, singleProduct, isLoading } =
     useContext(ProductsContext);
 

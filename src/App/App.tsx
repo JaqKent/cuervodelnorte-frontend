@@ -4,17 +4,16 @@ import ReactGA from "react-ga";
 import Notifications from "react-notify-toast";
 
 import ProductCategory from "components/ProductCategory";
+import ProductScreen from "components/ProductScreen";
+import SearchBar from "components/SearchBar";
+import Footer from "components/Footer/index";
+import NavBar from "components/NavBar";
 import ProductsProvider from "context/Product";
+
+import Home from "screens/Home";
 import ProductIndex from "screens/productIndex";
 
 import { notifications } from "./constant";
-
-import ProductScreen from "components/ProductScreen";
-
-import SearchBar from "components/SearchBar";
-import Home from "screens/Home";
-import Footer from "components/Footer/index";
-import NavBar from "components/NavBar";
 
 function App() {
   useEffect(() => {
