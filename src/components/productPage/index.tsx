@@ -54,7 +54,7 @@ function ProductPage({ product }: Props) {
             fill="#fff"
             onClick={handleHome}
           />
-          <h4>{product.name}</h4> <p>{product.price}</p>
+          <h4>{product.name}</h4> <p>${product.price}</p>
         </div>
 
         <Carousel slides={product.image} />
@@ -62,7 +62,7 @@ function ProductPage({ product }: Props) {
         <div className={styles.line}></div>
         <div className={styles.text}>
           <div className={styles.textUp}>
-            <h3>{product.name}</h3> <p>{product.price}</p>
+            <h3>{product.name}</h3> <p>${product.price}</p>
           </div>
           <div className={styles.textDown}>
             <p>{product.description}</p>
