@@ -6,7 +6,7 @@ import Notifications from "react-notify-toast";
 import ProductCategory from "components/ProductCategory";
 import ProductScreen from "components/ProductScreen";
 import SearchBar from "components/SearchBar";
-import Footer from "components/Footer/index";
+
 import NavBar from "components/NavBar";
 import ProductsProvider from "context/Product";
 
@@ -14,6 +14,8 @@ import Home from "screens/Home";
 import ProductIndex from "screens/productIndex";
 
 import { notifications } from "./constant";
+import Footer from "components/Footer/Index";
+import Cart from "screens/Cart";
 
 function App() {
   useEffect(() => {
@@ -40,6 +42,7 @@ function App() {
         </Routes>
       </ProductsProvider>
       <Footer />
+      <Cart />
     </Router>
   );
 }

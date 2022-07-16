@@ -1,0 +1,25 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.container {
+  @include flex(center, center, column);
+  padding: 30px;
+  height: 100%;
+}
+
+.icon {
+  color: $primary;
+  font-size: 70px;
+}
+
+.title {
+  color: $black;
+  font-weight: $bold;
+  font-size: 20px;
+  padding: 20px 0;
+}
+
+.body {
+  color: $dark-navy;
+}
