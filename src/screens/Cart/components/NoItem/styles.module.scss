@@ -1,7 +1,6 @@
 @import "scss/colors";
 @import "scss/mixins";
 @import "scss/variable";
-
 .container {
   @include flex(center, center, column);
   padding: 30px;

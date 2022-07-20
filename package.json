@@ -19,6 +19,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-ga": "^3.3.0",
+    "react-hook-form": "^7.33.1",
     "react-media": "^1.10.0",
     "react-notify-toast": "^0.5.1",
     "react-router-dom": "^6.3.0",

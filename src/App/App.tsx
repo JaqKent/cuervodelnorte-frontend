@@ -14,8 +14,9 @@ import Home from "screens/Home";
 import ProductIndex from "screens/productIndex";
 
 import { notifications } from "./constant";
-import Footer from "components/Footer/Index";
 import Cart from "screens/Cart";
+import CartProvider from "context/Cart";
+import Footer from "components/Footer/Index";
 
 function App() {
   useEffect(() => {
@@ -26,23 +27,25 @@ function App() {
       <Notifications options={notifications} />
       <NavBar />
       <ProductsProvider>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <SearchBar />
-                <Home />
-                <ProductIndex />
-              </>
-            }
-          />
-          <Route path="/productcategory/:id" element={<ProductCategory />} />
-          <Route path="/product/:id" element={<ProductScreen />} />
-        </Routes>
+        <CartProvider>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <SearchBar />
+                  <Home />
+                  <ProductIndex />
+                </>
+              }
+            />
+            <Route path="/productcategory/:id" element={<ProductCategory />} />
+            <Route path="/product/:id" element={<ProductScreen />} />
+            <Route path="/Cart/:id" element={<Cart />} />
+          </Routes>
+        </CartProvider>
       </ProductsProvider>
       <Footer />
-      <Cart />
     </Router>
   );
 }

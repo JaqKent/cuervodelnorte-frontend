@@ -1,5 +1,4 @@
 import { CartItem } from "context/Cart/constants";
-
 import styles from "./styles.module.scss";
 
 interface Props {
