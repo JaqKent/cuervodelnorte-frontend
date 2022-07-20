@@ -6,6 +6,12 @@ export interface CartItem {
   quantity: number;
 }
 
+export interface INPUT {
+  id: number;
+  name: string;
+  type: string;
+  placeholder: string;
+}
 export const INPUTS = [
   {
     id: 0,
