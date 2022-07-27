@@ -3,22 +3,22 @@
 @import "scss/variable";
 .container {
   @include flex(center, center, column);
+  height: 50vh;
   padding: 30px;
-  height: 100%;
 }
 
 .icon {
-  color: $primary;
+  color: darken($red, 25%);
   font-size: 70px;
 }
 
 .title {
-  color: $black;
-  font-weight: $bold;
+  color: $white;
   font-size: 20px;
+  font-weight: $bold;
   padding: 20px 0;
 }
 
 .body {
-  color: $dark-navy;
+  color: $white;
 }

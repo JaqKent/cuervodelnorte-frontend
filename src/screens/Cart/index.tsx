@@ -11,7 +11,7 @@ import styles from "./styles.module.scss";
 function Cart() {
   const { productList, checkout } = useContext(CartContext);
   const { handleSubmit, control } = useForm<Info>();
-  const requiredItem = <p className={styles.requiredItem}>*</p>;
+  const requiredItem = <p className={styles.required}>*</p>;
   const onSubmit: SubmitHandler<Info> = (info) => {
     checkout(info);
   };
@@ -47,6 +47,7 @@ function Cart() {
                         label={`${input.name}:`}
                         placeholder={input.placeholder}
                         labelClassName={styles.formLabel}
+                        inputClassName={styles.formInput}
                         required
                       />
                       {input.name === "whatsApp" && (
@@ -63,10 +64,8 @@ function Cart() {
             ))}
           </div>
           <p className={styles.subTitle}>
-            No compartiremos tus datos con absolutamente nadie
-            {requiredItem}
+            No compartiremos tus datos con absolutamente nadie.{requiredItem}
           </p>
-          <p className={styles.wePromise}>Lo prometemos</p>
         </main>
         <aside className={styles.totalCart}>
           {productList.length ? (
@@ -75,7 +74,11 @@ function Cart() {
                 <h1 className={styles.totalTitle}>Carrito</h1>
                 <PurchaseList className={styles.list} items={productList} />
               </div>
-              <button>Comprar</button>
+              <div className={styles.buttonPosition}>
+                <button className={styles.button} type="submit">
+                  Comprar
+                </button>
+              </div>
             </>
           ) : (
             <NoItem />

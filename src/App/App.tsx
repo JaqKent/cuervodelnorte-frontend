@@ -5,18 +5,15 @@ import Notifications from "react-notify-toast";
 
 import ProductCategory from "components/ProductCategory";
 import ProductScreen from "components/ProductScreen";
-import SearchBar from "components/SearchBar";
+import HomeScreen from "screens/HomeScreen";
 
 import NavBar from "components/NavBar";
 import ProductsProvider from "context/Product";
-
-import Home from "screens/Home";
-import ProductIndex from "screens/productIndex";
-
-import { notifications } from "./constant";
 import Cart from "screens/Cart";
 import CartProvider from "context/Cart";
 import Footer from "components/Footer/Index";
+
+import { notifications } from "./constant";
 
 function App() {
   useEffect(() => {
@@ -33,15 +30,13 @@ function App() {
               path="/"
               element={
                 <>
-                  <SearchBar />
-                  <Home />
-                  <ProductIndex />
+                  <HomeScreen />
                 </>
               }
             />
             <Route path="/productcategory/:id" element={<ProductCategory />} />
             <Route path="/product/:id" element={<ProductScreen />} />
-            <Route path="/Cart/:id" element={<Cart />} />
+            <Route path="/Cart" element={<Cart />} />
           </Routes>
         </CartProvider>
       </ProductsProvider>

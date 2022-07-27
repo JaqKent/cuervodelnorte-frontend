@@ -3,21 +3,21 @@
 @import "scss/variable";
 
 .separator {
-  margin: 15px 0;
   border: 1px solid $black;
+  margin: 15px 0;
 }
 
 .totalContainer {
-  @include flex(space-between, center, row);
+  @include flex(space-evenly, center, row);
 }
 
 .price {
-  font-weight: $bold;
-  font-size: 14px;
   color: $white;
+  font-size: 14px;
+  font-weight: $bold;
 }
 
 .totalText {
-  font-size: 14px;
   color: $white;
+  font-size: 14px;
 }

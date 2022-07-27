@@ -2,24 +2,21 @@
 @import "scss/mixins";
 @import "scss/variable";
 .container {
-  @include flex(space-between, space-between, row);
-
+  @include flex(space-evenly, center, column);
   min-height: calc(100vh - 60px);
-  padding: 0 0 0 76px;
+  width: 100vw;
 }
 
 .totalCart {
-  padding: 60px;
-  width: 30%;
+  @include flex(center, space-between, column);
   background-color: rgba($black, 0.8);
   text-align: center;
-
-  @include flex(space-between, space-between, column);
+  width: 100vw;
 
   .totalTitle {
+    color: $warning;
     font-size: 42px;
     font-weight: $bold;
-    color: $white;
     margin-bottom: 30px;
   }
 
@@ -29,44 +26,67 @@
 }
 
 .mainContainer {
-  padding: 60px 0;
-
-  @include flex(flex-start, space-around, column);
+  @include flex(center, center, column);
+  padding: 0 30px;
 
   .title {
+    color: $primary;
     font-size: 42px;
     font-weight: $bold;
-    color: $white;
     margin-bottom: 30px;
   }
 
   .subTitle {
+    color: $primary;
     font-size: 18px;
     font-weight: $bold;
-    color: $white;
-  }
-
-  .wePromise {
-    margin-top: 30px;
-    font-weight: $bold;
-    color: $primary;
   }
 }
 
 .form {
   @include flex(space-between, space-between, column);
-
-  margin: 50px 0;
-  gap: 30px;
-  width: 50%;
+  color: $primary;
+  gap: 20px;
+  padding-top: 10px;
+  width: 60%;
 }
 
 .formLabel {
-  color: $white;
+  color: $black;
+}
+.formInput {
+  color: $primary;
+  font-weight: bold;
 }
 
 .required {
   color: $primary;
   font-size: 18px;
   font-weight: $bold;
+}
+.buttonPosition {
+  @include flex(space-evenly, center, row);
+  .button {
+    @include flex(space-evenly, center, row);
+    background-color: $primary;
+    border-radius: 15px;
+    color: $white;
+    font-weight: bold;
+    height: 60px;
+    margin: 30px 0 30px 0;
+    width: 250px;
+    &:hover {
+      background-color: darken($primary, 5%);
+      color: $gray;
+      cursor: pointer;
+    }
+    &:active {
+      background-color: lighten($primary, 5%);
+      transform: translateY(4px);
+    }
+
+    @include responsive(md) {
+      font-size: large;
+    }
+  }
 }

@@ -5,14 +5,14 @@ export interface CartItem {
   stock: number;
   quantity: number;
 }
-
-export interface INPUT {
+export interface Input {
   id: number;
-  name: string;
   type: string;
+  name: "name" | "whatsApp";
   placeholder: string;
 }
-export const INPUTS = [
+
+export const INPUTS: Input[] = [
   {
     id: 0,
     type: "text",
