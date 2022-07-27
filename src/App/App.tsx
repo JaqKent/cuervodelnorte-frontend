@@ -5,13 +5,14 @@ import Notifications from "react-notify-toast";
 
 import ProductCategory from "components/ProductCategory";
 import ProductScreen from "components/ProductScreen";
-import HomeScreen from "screens/HomeScreen";
-
 import NavBar from "components/NavBar";
-import ProductsProvider from "context/Product";
-import Cart from "screens/Cart";
-import CartProvider from "context/Cart";
 import Footer from "components/Footer/Index";
+
+import ProductsProvider from "context/Product";
+import CartProvider from "context/Cart";
+
+import HomeScreen from "screens/HomeScreen";
+import Cart from "screens/Cart";
 
 import { notifications } from "./constant";
 
@@ -26,14 +27,7 @@ function App() {
       <ProductsProvider>
         <CartProvider>
           <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <HomeScreen />
-                </>
-              }
-            />
+            <Route path="/" element={<HomeScreen />} />
             <Route path="/productcategory/:id" element={<ProductCategory />} />
             <Route path="/product/:id" element={<ProductScreen />} />
             <Route path="/Cart" element={<Cart />} />
