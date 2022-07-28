@@ -1,0 +1,35 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+.container {
+  @include flex(space-evenly, flex-start, row);
+}
+
+.deleteButton {
+  color: $warning;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: $bold;
+
+  &:hover {
+    color: lighten($red, 15);
+  }
+}
+
+.price {
+  color: $white;
+  font-size: 14px;
+  font-weight: $bold;
+}
+
+.itemName {
+  color: $white;
+  font-size: 14px;
+  margin-left: 8px;
+  max-width: 300px;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 180px;
+}

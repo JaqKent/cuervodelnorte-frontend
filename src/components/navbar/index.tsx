@@ -20,6 +20,9 @@ function NavBar() {
   const handleHome = () => {
     navigate(`/`);
   };
+  const handleCart = () => {
+    navigate(`/Cart`);
+  };
 
   const handleToggle = () => {
     setOpen(!open);
@@ -59,7 +62,7 @@ function NavBar() {
         <div>
           <img
             className={styles.cart}
-            onClick={() => console.log("carrito")}
+            onClick={handleCart}
             src={cart}
             alt="Carrito"
           />

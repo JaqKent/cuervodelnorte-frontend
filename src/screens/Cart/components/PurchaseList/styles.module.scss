@@ -1,0 +1,23 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.separator {
+  border: 1px solid $black;
+  margin: 15px 0;
+}
+
+.totalContainer {
+  @include flex(space-evenly, center, row);
+}
+
+.price {
+  color: $white;
+  font-size: 14px;
+  font-weight: $bold;
+}
+
+.totalText {
+  color: $white;
+  font-size: 14px;
+}
