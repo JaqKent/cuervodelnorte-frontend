@@ -22,17 +22,16 @@ function ProductCategory() {
   const categoryId = (id: string | undefined) => {
     switch (id) {
       case "1":
-        return "Yerberos";
+        return null;
 
       case "2":
-        return "Billeteras";
+        return "Carteras";
 
       case "3":
-        return "Bolsos";
+        return "Mochilas";
 
       case "4":
-        return "KitMatero";
-
+        return "Bolsos";
       case "5":
         return "Accesorios";
 
@@ -48,8 +47,9 @@ function ProductCategory() {
       ) : (
         <>
           <div className={styles.bar}>
-            <Arrow width={15} height={15} fill="#fff" onClick={handleBack} />
-
+            <div className={styles.arrow}>
+              <Arrow width={15} height={15} fill="#fff" onClick={handleBack} />
+            </div>
             <h3>{categoryId(id)}</h3>
             <p>
               ({categoryStock ? categoryStock : "Sin"}

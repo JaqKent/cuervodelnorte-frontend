@@ -30,6 +30,9 @@ function Links({ onClose }: Props) {
     setCurrentSelected(id);
     sortProducts(id);
   };
+  const handleAbout = () => {
+    navigate(`/AboutUs`);
+  };
 
   return (
     <div className={styles.container}>
@@ -49,8 +52,8 @@ function Links({ onClose }: Props) {
               </div>
             ))}
           </div>
-          <div>
-            <NavItem onClick={() => console.log("about")} label={"about"} />
+          <div onClick={onClose}>
+            <NavItem onClick={handleAbout} label={"Sobre Nosotros"} />
             <NavItem onClick={() => console.log("help")} label={"help"} />
           </div>
         </div>

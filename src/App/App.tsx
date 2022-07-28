@@ -15,6 +15,7 @@ import HomeScreen from "screens/HomeScreen";
 import Cart from "screens/Cart";
 
 import { notifications } from "./constant";
+import AboutUs from "screens/AboutUs";
 
 function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/productcategory/:id" element={<ProductCategory />} />
             <Route path="/product/:id" element={<ProductScreen />} />
             <Route path="/Cart" element={<Cart />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
           </Routes>
         </CartProvider>
       </ProductsProvider>

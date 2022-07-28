@@ -5,9 +5,9 @@
 .container {
   @include flex(space-around, center, column);
   background-color: $black;
-  min-width: 375px;
-  height: 150px;
   color: $white;
+  height: 150px;
+  width: 100vw;
   .follow {
     font-size: 14px;
     font-weight: bold;

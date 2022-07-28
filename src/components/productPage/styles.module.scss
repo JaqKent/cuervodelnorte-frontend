@@ -5,13 +5,13 @@
 .container {
   @include flex(center, center, column);
   background-color: $white;
-  min-width: 375px;
+  width: 100%;
 
   .title {
     @include flex(flex-start, center, row);
     background-color: $primary;
     width: 100%;
-    padding-left: 18px;
+
     gap: 15px;
     color: $white;
     height: 60px;
@@ -23,6 +23,7 @@
       font-size: 15px;
     }
     .arrow {
+      padding-left: 20px;
       cursor: pointer;
     }
   }
