@@ -13,9 +13,9 @@ import CartProvider from "context/Cart";
 
 import HomeScreen from "screens/HomeScreen";
 import Cart from "screens/Cart";
+import AboutUs from "screens/AboutUs";
 
 import { notifications } from "./constant";
-import AboutUs from "screens/AboutUs";
 
 function App() {
   useEffect(() => {

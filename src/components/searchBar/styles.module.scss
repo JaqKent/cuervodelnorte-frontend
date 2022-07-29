@@ -5,8 +5,8 @@
 .container {
   @include flex(center, center, row);
   background-color: $primary;
-  min-width: 375px;
   height: 60px;
+  min-width: 375px;
 
   .bar {
     @include flex(center, center, row);
@@ -20,4 +20,25 @@
     min-width: 80%;
     padding-left: 30px;
   }
+}
+.dropdown {
+  background-color: rgba($primary, 0.5);
+  border-radius: 0 0 10px 10px;
+  border: 1px solid $dark-navy;
+  display: flex;
+  flex-direction: column;
+  min-width: 80%;
+
+  &:empty {
+    border: none;
+  }
+}
+
+.dropdownRow {
+  cursor: pointer;
+  margin: 2px 0;
+  text-align: center;
+}
+.button {
+  cursor: pointer;
 }
