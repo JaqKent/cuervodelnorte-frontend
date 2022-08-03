@@ -21,7 +21,6 @@ function ProductIndex() {
 
   const handleSelect = (id: number) => {
     navigate(`/productcategory/${id}`);
-
     gaTracking(GAStoreActions.Filtered, SortingType[id]);
     setCurrentSelected(id);
     sortProducts(id);

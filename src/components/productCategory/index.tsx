@@ -21,9 +21,6 @@ function ProductCategory() {
 
   const categoryId = (id: string | undefined) => {
     switch (id) {
-      case "1":
-        return null;
-
       case "2":
         return "Carteras";
 

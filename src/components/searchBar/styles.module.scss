@@ -7,6 +7,7 @@
   background-color: $primary;
   height: 60px;
   min-width: 375px;
+  gap: 5px;
 
   .bar {
     @include flex(center, center, row);
@@ -40,5 +41,18 @@
   text-align: center;
 }
 .button {
+  height: 40px;
+  border: 1px solid $black;
+  border-radius: 10px;
+  background-color: lighten($dark-navy, 5%);
   cursor: pointer;
+  &:hover {
+    background-color: darken($dark-navy, 2%);
+    color: $gray;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: lighten($dark-navy, 8%);
+    transform: translateY(4px);
+  }
 }
