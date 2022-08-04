@@ -19,7 +19,7 @@ interface Props {
 
 function Links({ onClose }: Props) {
   const [currentSelected, setCurrentSelected] = useState(SortingType.All);
-  const { handleSortProducts: sortProducts } = useContext(ProductsContext);
+
   const gaTracking = useGATracking(GoogleAnalyticsEvents.Store);
 
   const navigate = useNavigate();
@@ -28,8 +28,8 @@ function Links({ onClose }: Props) {
     navigate(`/productcategory/${id}`);
     gaTracking(GAStoreActions.Filtered, SortingType[id]);
     setCurrentSelected(id);
-    sortProducts(id);
   };
+
   const handleAbout = () => {
     navigate(`/AboutUs`);
   };

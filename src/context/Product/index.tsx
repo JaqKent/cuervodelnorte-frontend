@@ -45,22 +45,28 @@ export default function ProductsProvider({
   const [products, setProducts] = useState<Product[]>([]);
   const [singleProduct, setSingleProduct] = useState<Product>(DEFAULT_PRODUCT);
 
-  const handleSortProducts = (sortingType: number) => {
+  const handleSortProducts = useCallback((sortingType: number) => {
+    console.log("Se comienza a sortear");
     if (allProducts.length) {
+      console.log("entro al if", allProducts);
       setProducts([...sortProducts(allProducts, sortingType), DEFAULT_PRODUCT]);
       setProducts((prevState) =>
         prevState.filter((item) => item !== DEFAULT_PRODUCT)
       );
     }
-  };
+
+    console.log("salio del if", products);
+  }, []);
 
   const gatherProducts = useCallback(() => {
     setLoadingText("Obteniendo productos");
     getAllProducts()
       .then(({ data }) => {
         if (data) {
-          setProducts(data.response);
-          setAllProducts(sortProducts(data.response, SortingType.All));
+          console.log(data, "asi viene del server");
+          // setProducts(data.response);
+          /* setAllProducts(sortProducts(data.response, SortingType.All)); */
+          setAllProducts(data.response);
           setLoadingText("");
         } else {
           notify.show(
@@ -113,6 +119,7 @@ export default function ProductsProvider({
   );
 
   useEffect(() => {
+    console.log("useffect del context");
     gatherProducts();
   }, [gatherProducts]);
 

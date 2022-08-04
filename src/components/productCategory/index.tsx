@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { ProductsContext } from "context/Product";
@@ -7,9 +7,14 @@ import LoadingSpinner from "components/LoadingSpinner";
 
 import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
 import styles from "./styles.module.scss";
+import { sortProducts } from "context/Product/utils";
 
 function ProductCategory() {
-  const { isLoading, products } = useContext(ProductsContext);
+  const {
+    handleSortProducts: sortProducts,
+    isLoading,
+    products,
+  } = useContext(ProductsContext);
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -36,6 +41,11 @@ function ProductCategory() {
         return "";
     }
   };
+
+  useEffect(() => {
+    console.log(products, "useffect del componente");
+    sortProducts(Number(id));
+  }, [id, products]);
 
   return (
     <div className={styles.container}>
