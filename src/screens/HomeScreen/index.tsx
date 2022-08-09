@@ -1,6 +1,6 @@
 import SearchBar from "components/SearchBar";
 import Home from "screens/Home";
-import ProductIndex from "screens/productIndex";
+import ProductIndex from "screens/ProductIndex";
 
 function HomeScreen() {
   return (

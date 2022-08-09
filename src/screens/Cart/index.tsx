@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import FormInput from "components/FormImput/FormImput";
+import FormInput from "components/FormInput";
 import NoItem from "./components/NoItem";
 import PurchaseList from "./components/PurchaseList";
 import { CartContext } from "context/Cart";

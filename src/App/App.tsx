@@ -5,8 +5,8 @@ import Notifications from "react-notify-toast";
 
 import ProductCategory from "components/ProductCategory";
 import ProductScreen from "components/ProductScreen";
-import NavBar from "components/NavBar";
-import Footer from "components/Footer/Index";
+import NavBar from "components/Navbar";
+import Footer from "components/Footer";
 
 import ProductsProvider from "context/Product";
 import CartProvider from "context/Cart";

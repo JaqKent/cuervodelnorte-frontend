@@ -47,20 +47,3 @@
     }
   }
 }
-.noItems {
-  @include flex(center, center, column);
-
-  margin-top: 30px;
-  gap: 15px;
-}
-
-.noItemsTitle {
-  color: $black;
-  font-size: 2em;
-  font-weight: $bold;
-  text-align: center;
-}
-
-.noItemsText {
-  color: $black;
-}

@@ -6,14 +6,14 @@ import {
   useEffect,
   useCallback,
   ReactNode,
-} from "react";
-import { notify } from "react-notify-toast";
+} from 'react';
+import { notify } from 'react-notify-toast';
 
-import { Product } from "interface/Products";
+import { Product } from 'interface/Products';
 
-import { DEFAULT_PRODUCT, SortingType } from "./constants";
-import { sortProducts } from "./utils";
-import { getAllProducts, getProduct } from "services/ProductServices";
+import { DEFAULT_PRODUCT, SortingType } from './constants';
+import { sortProducts } from './utils';
+import { getAllProducts, getProduct } from 'services/ProductServices';
 
 interface ContextProps {
   products: Product[];
@@ -40,86 +40,86 @@ export default function ProductsProvider({
 }: {
   children: ReactNode;
 }) {
-  const [loadingText, setLoadingText] = useState("");
+  const [loadingText, setLoadingText] = useState('');
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [singleProduct, setSingleProduct] = useState<Product>(DEFAULT_PRODUCT);
 
-  const handleSortProducts = useCallback((sortingType: number) => {
-    console.log("Se comienza a sortear");
-    if (allProducts.length) {
-      console.log("entro al if", allProducts);
-      setProducts([...sortProducts(allProducts, sortingType), DEFAULT_PRODUCT]);
-      setProducts((prevState) =>
-        prevState.filter((item) => item !== DEFAULT_PRODUCT)
-      );
-    }
-
-    console.log("salio del if", products);
-  }, []);
+  const handleSortProducts = useCallback(
+    (sortingType: number) => {
+      if (allProducts.length) {
+        setProducts([
+          ...sortProducts(allProducts, sortingType),
+          DEFAULT_PRODUCT,
+        ]);
+        setProducts((prevState) =>
+          prevState.filter((item) => item !== DEFAULT_PRODUCT)
+        );
+      }
+    },
+    [allProducts]
+  );
 
   const gatherProducts = useCallback(() => {
-    setLoadingText("Obteniendo productos");
+    setLoadingText('Obteniendo productos');
     getAllProducts()
       .then(({ data }) => {
         if (data) {
-          console.log(data, "asi viene del server");
-          // setProducts(data.response);
-          /* setAllProducts(sortProducts(data.response, SortingType.All)); */
+          setAllProducts(sortProducts(data.response, SortingType.All));
           setAllProducts(data.response);
-          setLoadingText("");
+
+          setLoadingText('');
         } else {
           notify.show(
-            "Ocurrió un error trayendo los datos, por favor refresque la página",
-            "error"
+            'Ocurrió un error trayendo los datos, por favor refresque la página',
+            'error'
           );
-          setLoadingText("");
+          setLoadingText('');
         }
       })
       .catch(() => {
-        notify.show("Ocurrió un error trayendo los datos", "error");
-        setLoadingText("");
+        notify.show('Ocurrió un error trayendo los datos', 'error');
+        setLoadingText('');
       });
   }, []);
 
   const fetchSingleProduct = useCallback((id: string) => {
-    setLoadingText("Obteniendo productos");
+    setLoadingText('Obteniendo productos');
     getProduct(id)
       .then(({ data }) => {
         if (data) {
           setSingleProduct(data.response);
-          setLoadingText("");
+          setLoadingText('');
         } else {
           notify.show(
-            "Ocurrió un error trayendo los datos, por favor refresque la página",
-            "error"
+            'Ocurrió un error trayendo los datos, por favor refresque la página',
+            'error'
           );
         }
       })
       .catch(() => {
-        notify.show("Ocurrió un error trayendo los datos", "error");
-        setLoadingText("");
+        notify.show('Ocurrió un error trayendo los datos', 'error');
+        setLoadingText('');
       });
   }, []);
 
   const gatherSingleProduct = useCallback(
     (id: string) => {
-      setLoadingText("Obteniendo producto");
+      setLoadingText('Obteniendo producto');
 
       if (products.length > 0) {
-        setLoadingText("");
+        setLoadingText('');
         return setSingleProduct(
           products.find((product) => product._id === id) || DEFAULT_PRODUCT
         );
       }
-      setLoadingText("");
+      setLoadingText('');
       return fetchSingleProduct(id);
     },
     [fetchSingleProduct, products]
   );
 
   useEffect(() => {
-    console.log("useffect del context");
     gatherProducts();
   }, [gatherProducts]);
 
@@ -135,7 +135,7 @@ export default function ProductsProvider({
 
   return (
     <ProductsContext.Provider value={value}>
-      {children}
+      {loadingText ? <h1>loading</h1> : children}
     </ProductsContext.Provider>
   );
 }

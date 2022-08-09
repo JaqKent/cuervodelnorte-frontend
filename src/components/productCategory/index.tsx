@@ -7,7 +7,8 @@ import LoadingSpinner from "components/LoadingSpinner";
 
 import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
 import styles from "./styles.module.scss";
-import { sortProducts } from "context/Product/utils";
+import NoProductScreen from "./components/NoProductsScreen";
+import { categoryId } from "./utils";
 
 function ProductCategory() {
   const {
@@ -16,36 +17,17 @@ function ProductCategory() {
     products,
   } = useContext(ProductsContext);
   const navigate = useNavigate();
+  const { id } = useParams<string>();
 
   const handleBack = () => {
     navigate(`/`);
   };
+
   const categoryStock = products.length;
 
-  const { id } = useParams<string>();
-
-  const categoryId = (id: string | undefined) => {
-    switch (id) {
-      case "2":
-        return "Carteras";
-
-      case "3":
-        return "Mochilas";
-
-      case "4":
-        return "Bolsos";
-      case "5":
-        return "Accesorios";
-
-      default:
-        return "";
-    }
-  };
-
   useEffect(() => {
-    console.log(products, "useffect del componente");
     sortProducts(Number(id));
-  }, [id, products]);
+  }, [id]);
 
   return (
     <div className={styles.container}>
@@ -70,15 +52,7 @@ function ProductCategory() {
               ))}
             </div>
           ) : (
-            <div className={styles.noItems}>
-              <h1 className={styles.noItemsTitle}>
-                No hay productos para mostrar
-              </h1>
-              <p className={styles.noItemsText}>
-                Por favor. Cambiá la categoría, recarga la página o volvé en
-                otro momento :)
-              </p>
-            </div>
+            <NoProductScreen />
           )}
         </>
       )}
