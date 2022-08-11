@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ReactGA from "react-ga";
 import Notifications from "react-notify-toast";
 
-import ProductCategory from "components/ProductCategory";
 import ProductScreen from "components/ProductScreen";
 
 import Footer from "components/Footer";
@@ -11,6 +10,7 @@ import Footer from "components/Footer";
 import ProductsProvider from "context/Product";
 import CartProvider from "context/Cart";
 
+import CategoryScreen from "screens/CategoryScreen";
 import HomeScreen from "screens/HomeScreen";
 import Cart from "screens/Cart";
 import AboutUs from "screens/AboutUs";
@@ -31,7 +31,7 @@ function App() {
         <CartProvider>
           <Routes>
             <Route path="/" element={<HomeScreen />} />
-            <Route path="/productcategory/:id" element={<ProductCategory />} />
+            <Route path="/productcategory/:id" element={<CategoryScreen />} />
             <Route path="/product/:id" element={<ProductScreen />} />
             <Route path="/Cart" element={<Cart />} />
             <Route path="/AboutUs" element={<AboutUs />} />

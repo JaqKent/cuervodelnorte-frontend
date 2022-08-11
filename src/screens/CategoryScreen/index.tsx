@@ -10,7 +10,7 @@ import styles from "./styles.module.scss";
 import NoProductScreen from "./components/NoProductsScreen";
 import { categoryId } from "./utils";
 
-function ProductCategory() {
+function CategoryScreen() {
   const {
     handleSortProducts: sortProducts,
     isLoading,
@@ -60,4 +60,4 @@ function ProductCategory() {
   );
 }
 
-export default ProductCategory;
+export default CategoryScreen;
