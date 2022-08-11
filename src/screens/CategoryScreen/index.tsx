@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { ProductsContext } from "context/Product";
 import ProductCard from "components/ProductCard";
-import LoadingSpinner from "components/LoadingSpinner";
+import Spinner from "components/Spinner";
 
 import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
 import styles from "./styles.module.scss";
@@ -32,7 +32,7 @@ function CategoryScreen() {
   return (
     <div className={styles.container}>
       {isLoading ? (
-        <LoadingSpinner loadingText="Cargando" />
+        <Spinner loadingText="Cargando" />
       ) : (
         <>
           <div className={styles.bar}>
