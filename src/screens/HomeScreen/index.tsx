@@ -1,12 +1,12 @@
 import Searchinput from "components/SearchInput";
-import Home from "screens/Home";
+import LandingPage from "screens/LandingPage";
 import StoreFront from "screens/StoreFront";
 
 function HomeScreen() {
   return (
     <>
       <Searchinput />
-      <Home />
+      <LandingPage />
       <StoreFront />
     </>
   );
