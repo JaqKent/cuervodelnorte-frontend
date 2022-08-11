@@ -8,11 +8,11 @@ import {
 
 import { SortingType } from "context/Product/constants";
 import { SORT_TYPE } from "./constants";
-import Item from "./components/Item";
 
 import styles from "./styles.module.scss";
+import Item from "./components/Item";
 
-function ProductIndex() {
+function StoreFront() {
   const [currentSelected, setCurrentSelected] = useState(SortingType.All);
 
   const gaTracking = useGATracking(GoogleAnalyticsEvents.Store);
@@ -43,4 +43,4 @@ function ProductIndex() {
   );
 }
 
-export default ProductIndex;
+export default StoreFront;

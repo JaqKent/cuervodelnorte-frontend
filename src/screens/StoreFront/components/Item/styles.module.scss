@@ -6,44 +6,44 @@
   @include flex(space-between, center, column);
   @include responsive(sm) {
     background-color: rgba(darken($primary, 15%), 0.8);
-    padding: 10px;
-    margin: 5px 0;
     border-radius: 10px;
+    margin: 5px 0;
+    padding: 10px;
     @include responsive(lg) {
-      padding: 10px;
       margin: 10px;
+      padding: 10px;
     }
   }
 
   .section {
-    position: relative;
     display: inline-block;
+    position: relative;
 
     @include responsive(md) {
       padding: 25px;
     }
 
     .img {
-      width: 375px;
-      height: 375px;
       border-radius: 10px;
+      height: 375px;
+      width: 375px;
       @include responsive(md) {
-        width: 300px;
         height: 300px;
+        width: 300px;
       }
       @include responsive(lg) {
-        width: 400px;
         height: 400px;
+        width: 400px;
       }
     }
     .title {
       @include flex(center, center, row);
-      margin-top: 15px;
-      height: 25px;
-      width: 100px;
       background-color: rgba(darken($black, 50%), 0.5);
-      position: absolute;
+      height: 25px;
       left: 35%;
+      margin-top: 15px;
+      position: absolute;
+      width: 100px;
     }
   }
 

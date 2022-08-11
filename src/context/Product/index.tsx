@@ -11,10 +11,10 @@ import { notify } from "react-notify-toast";
 
 import { Product } from "interface/Products";
 import LoadingSpinner from "components/LoadingSpinner";
+import { getAllProducts, getProduct } from "services/ProductServices";
 
 import { DEFAULT_PRODUCT, SortingType } from "./constants";
 import { sortProducts } from "./utils";
-import { getAllProducts, getProduct } from "services/ProductServices";
 
 interface ContextProps {
   products: Product[];
@@ -87,12 +87,10 @@ export default function ProductsProvider({
   }, []);
 
   const fetchSingleProduct = useCallback((id: string) => {
-    setLoadingText("Obteniendo productos");
     getProduct(id)
       .then(({ data }) => {
         if (data) {
           setSingleProduct(data.response);
-          setLoadingText("");
         } else {
           notify.show(
             "Ocurrió un error trayendo los datos, por favor refresque la página",
@@ -102,8 +100,7 @@ export default function ProductsProvider({
       })
       .catch(() => {
         notify.show("Ocurrió un error trayendo los datos", "error");
-        setLoadingText("");
-      });
+      })
   }, []);
 
   const gatherSingleProduct = useCallback(

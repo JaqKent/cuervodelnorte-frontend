@@ -6,12 +6,13 @@ import {
 } from "interface/GoogleAnalytics";
 import useGATracking from "Hooks/useGATracking";
 import { SortingType } from "context/Product/constants";
-
+import { SORT_TYPE } from "screens/StoreFront/constants";
 import arrow from "assets/arrowLeft.svg";
-import styles from "./styles.module.scss";
 
 import NavItem from "../NavItem";
-import { SORT_TYPE } from "screens/productIndex/constants";
+import styles from "./styles.module.scss";
+
+
 
 interface Props {
   onClose: () => void;
@@ -42,7 +43,7 @@ function Links({ onClose }: Props) {
         </div>
         <div className={styles.about}>
           <div>
-            {SORT_TYPE.map((sort, index) => (
+            {SORT_TYPE.map((sort) => (
               <div onClick={onClose} key={sort.id}>
                 <NavItem
                   onClick={() => handleLink(sort.id)}
@@ -54,7 +55,6 @@ function Links({ onClose }: Props) {
           </div>
           <div onClick={onClose}>
             <NavItem onClick={handleAbout} label={"Sobre Nosotros"} />
-            <NavItem onClick={() => console.log("help")} label={"help"} />
           </div>
         </div>
       </div>
