@@ -15,6 +15,7 @@ import useGATracking from "Hooks/useGATracking";
 import { makePurchase } from "services/ProductServices";
 
 import { ProductsContext } from "context/Product";
+import Spinner from "components/Spinner";
 
 import {
   buildProductOutput,
@@ -24,7 +25,6 @@ import {
   removeProduct,
 } from "./utils";
 import { CartItem } from "./constants";
-import LoadingSpinner from "components/LoadingSpinner";
 
 interface ContextProps {
   productList: CartItem[];
@@ -117,7 +117,7 @@ export default function CartProvider({ children }: { children: ReactNode }) {
 
   return (
     <CartContext.Provider value={value}>
-      {!!loadingText && <LoadingSpinner loadingText={loadingText} />}
+      {!!loadingText && <Spinner loadingText={loadingText} />}
       {children}
     </CartContext.Provider>
   );
