@@ -88,5 +88,14 @@
     @include responsive(md) {
       font-size: large;
     }
+    .links {
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: $white;
+        text-decoration: none;
+      }
+    }
   }
 }

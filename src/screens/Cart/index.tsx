@@ -76,7 +76,12 @@ function Cart() {
               </div>
               <div className={styles.buttonPosition}>
                 <button className={styles.button} type="submit">
-                  Comprar
+                  <a
+                    className={styles.links}
+                    href={`api.whatsapp.com/send?phone=${process.env.REACT_APP_WHATSAPP_NUMBER}&text=${process.env.TEXT_TO_SEND}`}
+                  >
+                    Comprar
+                  </a>
                 </button>
               </div>
             </>
