@@ -2,7 +2,8 @@ import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { ProductsContext } from "context/Product";
-import ProductCard from "components/ProductCard";
+import CustomCard from "components/CustomCard";
+
 import Spinner from "components/Spinner";
 
 import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
@@ -48,7 +49,7 @@ function CategoryScreen() {
           {products?.length ? (
             <div className={styles.card}>
               {products.map((product) => (
-                <ProductCard {...product} key={product._id} />
+                <CustomCard {...product} key={product._id} />
               ))}
             </div>
           ) : (
