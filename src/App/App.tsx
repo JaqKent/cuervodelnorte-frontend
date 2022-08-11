@@ -4,6 +4,7 @@ import ReactGA from "react-ga";
 import Notifications from "react-notify-toast";
 
 import ProductScreen from "components/ProductScreen";
+import NavigationBar from "components/NavigationBar";
 import FooterBar from "components/FooterBar";
 
 import ProductsProvider from "context/Product";
@@ -15,7 +16,6 @@ import Cart from "screens/Cart";
 import AboutUs from "screens/AboutUs";
 
 import { notifications } from "./constant";
-import NavBar from "components/NavBar";
 
 function App() {
   useEffect(() => {
@@ -25,7 +25,7 @@ function App() {
   return (
     <Router>
       <Notifications options={notifications} />
-      <NavBar />
+      <NavigationBar />
       <ProductsProvider>
         <CartProvider>
           <Routes>

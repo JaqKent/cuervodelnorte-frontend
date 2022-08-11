@@ -9,7 +9,7 @@ import { ANIMATION_CONFIG } from "./constants";
 import Links from "./components/Links";
 import styles from "./styles.module.scss";
 
-function NavBar() {
+function NavigationBar() {
   const [open, setOpen] = useState(false);
   const transition = useTransition(open, ANIMATION_CONFIG);
 
@@ -18,7 +18,7 @@ function NavBar() {
   const handleHome = () => {
     navigate(`/`);
   };
-  
+
   const handleCart = () => {
     navigate(`/Cart`);
   };
@@ -71,4 +71,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default NavigationBar;
