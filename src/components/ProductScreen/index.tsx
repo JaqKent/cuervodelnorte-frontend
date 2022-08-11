@@ -1,8 +1,9 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Spinner from "components/Spinner";
-import ProductPage from "components/ProductPage";
+
 import { ProductsContext } from "context/Product";
+import ProductPage from "components/ProductPage";
 
 function ProductScreen() {
   const { id } = useParams<string>();
