@@ -19,7 +19,7 @@ function ProductPage({ product }: Props) {
   const [showModal, setShowModal] = useState(false);
 
   const handleHome = () => {
-    navigate(`/productcategory/:id`);
+    navigate(`/productcategory/${product.category}`);
   };
 
   const handleAddToCart = () => {

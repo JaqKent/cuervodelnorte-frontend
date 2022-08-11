@@ -5,7 +5,7 @@ import Notifications from "react-notify-toast";
 
 import ProductCategory from "components/ProductCategory";
 import ProductScreen from "components/ProductScreen";
-import NavBar from "components/Navbar";
+
 import Footer from "components/Footer";
 
 import ProductsProvider from "context/Product";
@@ -16,6 +16,7 @@ import Cart from "screens/Cart";
 import AboutUs from "screens/AboutUs";
 
 import { notifications } from "./constant";
+import NavBar from "components/NavBar";
 
 function App() {
   useEffect(() => {
