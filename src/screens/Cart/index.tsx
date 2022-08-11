@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import FormInput from "components/FormInput";
 import NoItem from "./components/NoItem";
@@ -14,6 +15,10 @@ function Cart() {
   const requiredItem = <p className={styles.required}>*</p>;
   const onSubmit: SubmitHandler<Info> = (info) => {
     checkout(info);
+  };
+  const navigate = useNavigate();
+  const handleGratitud = () => {
+    navigate(`/GratitudScreen`);
   };
 
   const NUMBER_VALIDATION = { min: 999999999, max: 9999999999999 };
@@ -75,13 +80,15 @@ function Cart() {
                 <PurchaseList className={styles.list} items={productList} />
               </div>
               <div className={styles.buttonPosition}>
-                <button className={styles.button} type="submit">
-                  <a
-                    className={styles.links}
-                    href={`api.whatsapp.com/send?phone=${process.env.REACT_APP_WHATSAPP_NUMBER}&text=${process.env.TEXT_TO_SEND}`}
-                  >
+                <button
+                  className={styles.button}
+                  type="submit"
+                  onClick={handleGratitud}
+                >
+                  Comprar
+                  {/* <a href="https://api.whatsapp.com/send?phone={REACT_APP_WHATSAPP_NUMBER}&text=avisa%20si%20anda">
                     Comprar
-                  </a>
+                  </a> */}
                 </button>
               </div>
             </>
