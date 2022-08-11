@@ -4,8 +4,7 @@ import ReactGA from "react-ga";
 import Notifications from "react-notify-toast";
 
 import ProductScreen from "components/ProductScreen";
-
-import Footer from "components/Footer";
+import FooterBar from "components/FooterBar";
 
 import ProductsProvider from "context/Product";
 import CartProvider from "context/Cart";
@@ -38,7 +37,7 @@ function App() {
           </Routes>
         </CartProvider>
       </ProductsProvider>
-      <Footer />
+      <FooterBar />
     </Router>
   );
 }

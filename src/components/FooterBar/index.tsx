@@ -3,7 +3,7 @@ import { ReactComponent as Instagram } from "assets/instagram.svg";
 
 import styles from "./styles.module.scss";
 
-function Footer() {
+function FooterBar() {
   return (
     <footer className={styles.container}>
       <div className={styles.sectionUp}>
@@ -51,4 +51,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default FooterBar;
