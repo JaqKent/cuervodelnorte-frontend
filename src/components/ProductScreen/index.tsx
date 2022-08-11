@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import LoadingSpinner from "components/LoadingSpinner";
+import Spinner from "components/Spinner";
 import ProductPage from "components/ProductPage";
 import { ProductsContext } from "context/Product";
 
@@ -17,7 +17,7 @@ function ProductScreen() {
   }, [gatherSingleProduct, id]);
   return (
     <div>
-      {isLoading && <LoadingSpinner />}
+      {isLoading && <Spinner />}
       <ProductPage product={singleProduct} />
     </div>
   );

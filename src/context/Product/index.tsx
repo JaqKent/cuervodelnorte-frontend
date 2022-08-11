@@ -10,7 +10,8 @@ import {
 import { notify } from "react-notify-toast";
 
 import { Product } from "interface/Products";
-import LoadingSpinner from "components/LoadingSpinner";
+import Spinner from "components/Spinner";
+
 import { getAllProducts, getProduct } from "services/ProductServices";
 
 import { DEFAULT_PRODUCT, SortingType } from "./constants";
@@ -100,7 +101,7 @@ export default function ProductsProvider({
       })
       .catch(() => {
         notify.show("Ocurrió un error trayendo los datos", "error");
-      })
+      });
   }, []);
 
   const gatherSingleProduct = useCallback(
@@ -136,7 +137,7 @@ export default function ProductsProvider({
 
   return (
     <ProductsContext.Provider value={value}>
-      {loadingText ? <LoadingSpinner /> : children}
+      {loadingText ? <Spinner /> : children}
     </ProductsContext.Provider>
   );
 }
