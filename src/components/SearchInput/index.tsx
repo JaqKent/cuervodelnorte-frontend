@@ -5,7 +5,7 @@ import lupa from "assets/search.svg";
 
 import styles from "./styles.module.scss";
 
-function SearchBar() {
+function Searchinput() {
   const { allProducts } = useContext(ProductsContext);
   const [value, setValue] = useState("");
   const navigate = useNavigate();
@@ -55,4 +55,4 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+export default Searchinput;

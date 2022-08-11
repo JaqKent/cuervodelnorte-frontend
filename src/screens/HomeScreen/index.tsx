@@ -1,11 +1,11 @@
-import SearchBar from "components/SearchBar";
+import Searchinput from "components/SearchInput";
 import Home from "screens/Home";
 import StoreFront from "screens/StoreFront";
 
 function HomeScreen() {
   return (
     <>
-      <SearchBar />
+      <Searchinput />
       <Home />
       <StoreFront />
     </>
