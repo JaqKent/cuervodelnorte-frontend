@@ -1,29 +1,31 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ProductsContext } from "context/Product";
 import lupa from "assets/search.svg";
 
 import styles from "./styles.module.scss";
 
 function SearchBar() {
-  const { products } = useContext(ProductsContext);
+  const { allProducts } = useContext(ProductsContext);
   const [value, setValue] = useState("");
+  const navigate = useNavigate();
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
   const onSearch = (searchItem: string) => {
-    setValue(searchItem);
+    navigate(`/product/${searchItem}`);
     console.log("search", searchItem);
   };
-  const filteredProducts = products
+
+  const filteredProducts = allProducts
     .filter((item) => {
       const searchItem = value.toLowerCase();
       const name = item.name.toLowerCase();
-      return searchItem && name.startsWith(searchItem) && name !== searchItem;
+      return searchItem && name.includes(searchItem);
     })
     .slice(0, 5);
-
   return (
     <>
       <div className={styles.container}>
@@ -41,11 +43,10 @@ function SearchBar() {
       <div className={styles.dropdown}>
         {filteredProducts.map((item) => (
           <div
-            onClick={() => onSearch(item.name)}
+            onClick={() => onSearch(item._id || "")}
             className={styles.dropdownRow}
             key={item._id}
           >
-            {" "}
             {item.name}
           </div>
         ))}

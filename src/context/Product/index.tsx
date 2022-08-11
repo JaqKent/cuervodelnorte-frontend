@@ -6,17 +6,19 @@ import {
   useEffect,
   useCallback,
   ReactNode,
-} from 'react';
-import { notify } from 'react-notify-toast';
+} from "react";
+import { notify } from "react-notify-toast";
 
-import { Product } from 'interface/Products';
+import { Product } from "interface/Products";
+import LoadingSpinner from "components/LoadingSpinner";
 
-import { DEFAULT_PRODUCT, SortingType } from './constants';
-import { sortProducts } from './utils';
-import { getAllProducts, getProduct } from 'services/ProductServices';
+import { DEFAULT_PRODUCT, SortingType } from "./constants";
+import { sortProducts } from "./utils";
+import { getAllProducts, getProduct } from "services/ProductServices";
 
 interface ContextProps {
   products: Product[];
+  allProducts: Product[];
   singleProduct: Product;
   isLoading: boolean;
   gatherProducts: () => void;
@@ -27,6 +29,7 @@ interface ContextProps {
 
 export const ProductsContext = createContext<ContextProps>({
   products: [],
+  allProducts: [],
   singleProduct: DEFAULT_PRODUCT,
   isLoading: true,
   gatherProducts: () => {},
@@ -40,7 +43,7 @@ export default function ProductsProvider({
 }: {
   children: ReactNode;
 }) {
-  const [loadingText, setLoadingText] = useState('');
+  const [loadingText, setLoadingText] = useState("");
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [singleProduct, setSingleProduct] = useState<Product>(DEFAULT_PRODUCT);
@@ -61,59 +64,59 @@ export default function ProductsProvider({
   );
 
   const gatherProducts = useCallback(() => {
-    setLoadingText('Obteniendo productos');
+    setLoadingText("Obteniendo productos");
     getAllProducts()
       .then(({ data }) => {
         if (data) {
           setAllProducts(sortProducts(data.response, SortingType.All));
           setAllProducts(data.response);
 
-          setLoadingText('');
+          setLoadingText("");
         } else {
           notify.show(
-            'Ocurrió un error trayendo los datos, por favor refresque la página',
-            'error'
+            "Ocurrió un error trayendo los datos, por favor refresque la página",
+            "error"
           );
-          setLoadingText('');
+          setLoadingText("");
         }
       })
       .catch(() => {
-        notify.show('Ocurrió un error trayendo los datos', 'error');
-        setLoadingText('');
+        notify.show("Ocurrió un error trayendo los datos", "error");
+        setLoadingText("");
       });
   }, []);
 
   const fetchSingleProduct = useCallback((id: string) => {
-    setLoadingText('Obteniendo productos');
+    setLoadingText("Obteniendo productos");
     getProduct(id)
       .then(({ data }) => {
         if (data) {
           setSingleProduct(data.response);
-          setLoadingText('');
+          setLoadingText("");
         } else {
           notify.show(
-            'Ocurrió un error trayendo los datos, por favor refresque la página',
-            'error'
+            "Ocurrió un error trayendo los datos, por favor refresque la página",
+            "error"
           );
         }
       })
       .catch(() => {
-        notify.show('Ocurrió un error trayendo los datos', 'error');
-        setLoadingText('');
+        notify.show("Ocurrió un error trayendo los datos", "error");
+        setLoadingText("");
       });
   }, []);
 
   const gatherSingleProduct = useCallback(
     (id: string) => {
-      setLoadingText('Obteniendo producto');
+      setLoadingText("Obteniendo producto");
 
       if (products.length > 0) {
-        setLoadingText('');
+        setLoadingText("");
         return setSingleProduct(
           products.find((product) => product._id === id) || DEFAULT_PRODUCT
         );
       }
-      setLoadingText('');
+      setLoadingText("");
       return fetchSingleProduct(id);
     },
     [fetchSingleProduct, products]
@@ -125,6 +128,7 @@ export default function ProductsProvider({
 
   const value = {
     products,
+    allProducts,
     singleProduct,
     isLoading: !!loadingText,
     gatherProducts,
@@ -135,7 +139,7 @@ export default function ProductsProvider({
 
   return (
     <ProductsContext.Provider value={value}>
-      {loadingText ? <h1>loading</h1> : children}
+      {loadingText ? <LoadingSpinner /> : children}
     </ProductsContext.Provider>
   );
 }

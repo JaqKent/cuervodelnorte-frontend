@@ -1,16 +1,17 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   GAStoreActions,
   GoogleAnalyticsEvents,
-} from 'interface/GoogleAnalytics';
-import useGATracking from 'Hooks/useGATracking';
-import { SortingType } from 'context/Product/constants';
+} from "interface/GoogleAnalytics";
+import useGATracking from "Hooks/useGATracking";
+import { SortingType } from "context/Product/constants";
 
-import arrow from 'assets/arrowLeft.svg';
-import styles from './styles.module.scss';
-import { SORT_TYPE } from 'screens/ProductIndex/constants';
-import NavItem from '../NavItem';
+import arrow from "assets/arrowLeft.svg";
+import styles from "./styles.module.scss";
+
+import NavItem from "../NavItem";
+import { SORT_TYPE } from "screens/productIndex/constants";
 
 interface Props {
   onClose: () => void;
@@ -52,8 +53,8 @@ function Links({ onClose }: Props) {
             ))}
           </div>
           <div onClick={onClose}>
-            <NavItem onClick={handleAbout} label={'Sobre Nosotros'} />
-            <NavItem onClick={() => console.log('help')} label={'help'} />
+            <NavItem onClick={handleAbout} label={"Sobre Nosotros"} />
+            <NavItem onClick={() => console.log("help")} label={"help"} />
           </div>
         </div>
       </div>

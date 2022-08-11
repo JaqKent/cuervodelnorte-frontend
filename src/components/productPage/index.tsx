@@ -14,13 +14,13 @@ interface Props {
 
 function ProductPage({ product }: Props) {
   const navigate = useNavigate();
+  const { addProductToCart } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(1);
+  const [showModal, setShowModal] = useState(false);
+
   const handleHome = () => {
     navigate(`/productcategory/:id`);
   };
-  const { addProductToCart } = useContext(CartContext);
-
-  const [quantity, setQuantity] = useState(1);
-  const [showModal, setShowModal] = useState(false);
 
   const handleAddToCart = () => {
     addProductToCart(product, quantity);
@@ -30,6 +30,7 @@ function ProductPage({ product }: Props) {
   const handleCancel = () => {
     setShowModal(false);
   };
+
   const handleOpenModal = () => {
     setShowModal(true);
   };
