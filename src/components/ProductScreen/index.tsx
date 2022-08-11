@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Spinner from "components/Spinner";
+import ProductInfo from "components/ProductInfo";
 
 import { ProductsContext } from "context/Product";
-import ProductPage from "components/ProductPage";
 
 function ProductScreen() {
   const { id } = useParams<string>();
@@ -19,7 +19,7 @@ function ProductScreen() {
   return (
     <div>
       {isLoading && <Spinner />}
-      <ProductPage product={singleProduct} />
+      <ProductInfo product={singleProduct} />
     </div>
   );
 }
