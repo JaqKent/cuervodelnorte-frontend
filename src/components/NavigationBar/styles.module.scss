@@ -24,4 +24,16 @@
     padding: 20px 20px 0 0;
     cursor: pointer;
   }
+  .cartNumber {
+    position: absolute;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    color: $black;
+    font-size: 10px;
+    font-weight: $bold;
+    border-radius: 15px;
+    background-color: $primary;
+    margin-left: 5px;
+  }
 }

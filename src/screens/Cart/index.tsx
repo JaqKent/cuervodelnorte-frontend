@@ -17,9 +17,9 @@ function Cart() {
     checkout(info);
   };
   const navigate = useNavigate();
-  const handleGratitud = () => {
+  /*  const handleGratitud = () => {
     navigate(`/GratitudScreen`);
-  };
+  }; */
 
   const NUMBER_VALIDATION = { min: 999999999, max: 9999999999999 };
 
@@ -80,15 +80,8 @@ function Cart() {
                 <PurchaseList className={styles.list} items={productList} />
               </div>
               <div className={styles.buttonPosition}>
-                <button
-                  className={styles.button}
-                  type="submit"
-                  onClick={handleGratitud}
-                >
+                <button className={styles.button} type="submit">
                   Comprar
-                  {/* <a href="https://api.whatsapp.com/send?phone={REACT_APP_WHATSAPP_NUMBER}&text=avisa%20si%20anda">
-                    Comprar
-                  </a> */}
                 </button>
               </div>
             </>

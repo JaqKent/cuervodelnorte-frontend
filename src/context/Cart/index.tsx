@@ -89,7 +89,7 @@ export default function CartProvider({ children }: { children: ReactNode }) {
             notify.show("Exito", "success");
             setLoadingText("");
             setProductList([]);
-            history("/thank-you");
+            window.location.href = process.env.REACT_APP_WHATSAPP || "";
           } else {
             trackGA(GAGlobalActions.Issue);
             setLoadingText("");
