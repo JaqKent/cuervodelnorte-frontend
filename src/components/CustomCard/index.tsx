@@ -9,7 +9,7 @@ import { Product } from "interface/Products";
 
 import styles from "./styles.module.scss";
 
-function ProductCard({ image, name, price, description, _id, stock }: Product) {
+function CustomCard({ image, name, price, description, _id, stock }: Product) {
   const navigate = useNavigate();
   const gaTracking = useGATracking(GoogleAnalyticsEvents.Product);
 
@@ -44,4 +44,4 @@ function ProductCard({ image, name, price, description, _id, stock }: Product) {
   );
 }
 
-export default ProductCard;
+export default CustomCard;

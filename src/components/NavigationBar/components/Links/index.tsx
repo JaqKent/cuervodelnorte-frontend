@@ -1,17 +1,18 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   GAStoreActions,
   GoogleAnalyticsEvents,
 } from "interface/GoogleAnalytics";
 import useGATracking from "Hooks/useGATracking";
-import { ProductsContext } from "context/Product";
 import { SortingType } from "context/Product/constants";
-import { SORT_TYPE } from "screens/productIndex/constants";
-
+import { SORT_TYPE } from "screens/StoreFront/constants";
 import arrow from "assets/arrowLeft.svg";
-import styles from "./styles.module.scss";
+
 import NavItem from "../NavItem";
+import styles from "./styles.module.scss";
+
+
 
 interface Props {
   onClose: () => void;
@@ -19,7 +20,7 @@ interface Props {
 
 function Links({ onClose }: Props) {
   const [currentSelected, setCurrentSelected] = useState(SortingType.All);
-  const { handleSortProducts: sortProducts } = useContext(ProductsContext);
+
   const gaTracking = useGATracking(GoogleAnalyticsEvents.Store);
 
   const navigate = useNavigate();
@@ -28,8 +29,8 @@ function Links({ onClose }: Props) {
     navigate(`/productcategory/${id}`);
     gaTracking(GAStoreActions.Filtered, SortingType[id]);
     setCurrentSelected(id);
-    sortProducts(id);
   };
+
   const handleAbout = () => {
     navigate(`/AboutUs`);
   };
@@ -42,7 +43,7 @@ function Links({ onClose }: Props) {
         </div>
         <div className={styles.about}>
           <div>
-            {SORT_TYPE.map((sort, index) => (
+            {SORT_TYPE.map((sort) => (
               <div onClick={onClose} key={sort.id}>
                 <NavItem
                   onClick={() => handleLink(sort.id)}
@@ -54,7 +55,6 @@ function Links({ onClose }: Props) {
           </div>
           <div onClick={onClose}>
             <NavItem onClick={handleAbout} label={"Sobre Nosotros"} />
-            <NavItem onClick={() => console.log("help")} label={"help"} />
           </div>
         </div>
       </div>

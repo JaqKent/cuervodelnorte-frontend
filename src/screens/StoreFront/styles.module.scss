@@ -5,8 +5,8 @@
 .container {
   @include flex(center, center, column);
   background-color: $white;
-  min-width: 375px;
   color: $white;
+  min-width: 375px;
   padding-top: 15px;
   .separator {
     display: none;

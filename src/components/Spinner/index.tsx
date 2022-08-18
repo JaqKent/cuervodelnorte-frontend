@@ -4,7 +4,7 @@ interface Props {
   loadingText?: string;
 }
 
-function LoadingSpinner({ loadingText = "Cargando datos" }: Props) {
+function Spinner({ loadingText = "Cargando datos" }: Props) {
   return (
     <>
       <div className={styles.container}>
@@ -24,4 +24,4 @@ function LoadingSpinner({ loadingText = "Cargando datos" }: Props) {
   );
 }
 
-export default LoadingSpinner;
+export default Spinner;

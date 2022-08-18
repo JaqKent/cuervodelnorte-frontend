@@ -1,0 +1,59 @@
+@import "scss/colors";
+@import "scss/mixins";
+@import "scss/variable";
+
+.container {
+  @include flex(center, center, row);
+  background-color: $primary;
+  height: 60px;
+  min-width: 375px;
+  gap: 5px;
+
+  .bar {
+    @include flex(center, center, row);
+    background-color: rgba($white, 0.6);
+    background-image: url("~assets/search.svg");
+    background-position: 10px 16px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    border-style: none;
+    height: 40px;
+    min-width: 80%;
+    padding-left: 30px;
+  }
+}
+.dropdown {
+  background-color: rgba($primary, 0.5);
+  border-radius: 0 0 10px 10px;
+  border: 1px solid $dark-navy;
+  display: flex;
+  flex-direction: column;
+  min-width: 80%;
+
+  &:empty {
+    border: none;
+  }
+}
+
+.dropdownRow {
+  cursor: pointer;
+  margin: 2px 0;
+  height: 30px;
+  text-align: center;
+}
+.button {
+  height: 40px;
+  border: 1px solid $black;
+  border-radius: 10px;
+  background-color: lighten($dark-navy, 5%);
+  cursor: pointer;
+  &:hover {
+    background-color: darken($dark-navy, 2%);
+    color: $gray;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: lighten($dark-navy, 8%);
+    transform: translateY(4px);
+  }
+}

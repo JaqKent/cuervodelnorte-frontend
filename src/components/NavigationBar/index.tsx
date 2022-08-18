@@ -1,25 +1,24 @@
 import { useState } from "react";
-import { animated, useTransition } from "react-spring";
 import { useNavigate } from "react-router-dom";
-import Links from "./components/Links";
+import { animated, useTransition } from "react-spring";
 import menu from "assets/hamburgerIcon.svg";
 import cart from "assets/cartIcon.svg";
 import logo from "assets/logoNegro.png";
 
+import { ANIMATION_CONFIG } from "./constants";
+import Links from "./components/Links";
 import styles from "./styles.module.scss";
 
-function NavBar() {
+function NavigationBar() {
   const [open, setOpen] = useState(false);
-  const transition = useTransition(open, {
-    from: { x: -100, opacity: 0 },
-    enter: { x: 0, opacity: 1 },
-    leave: { x: -100, opacity: 0 },
-  });
+  const transition = useTransition(open, ANIMATION_CONFIG);
 
   const navigate = useNavigate();
+
   const handleHome = () => {
     navigate(`/`);
   };
+
   const handleCart = () => {
     navigate(`/Cart`);
   };
@@ -72,4 +71,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default NavigationBar;

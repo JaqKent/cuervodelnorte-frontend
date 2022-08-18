@@ -1,13 +1,13 @@
-import SearchBar from "components/SearchBar";
-import Home from "screens/Home";
-import ProductIndex from "screens/productIndex";
+import Searchinput from "components/SearchInput";
+import LandingPage from "screens/LandingPage";
+import StoreFront from "screens/StoreFront";
 
 function HomeScreen() {
   return (
     <>
-      <SearchBar />
-      <Home />
-      <ProductIndex />
+      <Searchinput />
+      <LandingPage />
+      <StoreFront />
     </>
   );
 }

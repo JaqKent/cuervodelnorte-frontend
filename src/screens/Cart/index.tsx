@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import FormInput from "components/FormImput/FormImput";
+import FormInput from "components/FormInput";
 import NoItem from "./components/NoItem";
 import PurchaseList from "./components/PurchaseList";
 import { CartContext } from "context/Cart";
@@ -76,7 +76,12 @@ function Cart() {
               </div>
               <div className={styles.buttonPosition}>
                 <button className={styles.button} type="submit">
-                  Comprar
+                  <a
+                    className={styles.links}
+                    href={`api.whatsapp.com/send?phone=${process.env.REACT_APP_WHATSAPP_NUMBER}&text=${process.env.TEXT_TO_SEND}`}
+                  >
+                    Comprar
+                  </a>
                 </button>
               </div>
             </>

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Carousel from "components/Carrousel";
+import Slider from "components/Slider";
+
 import CustomModal from "components/CustomModal";
 import { Product } from "interface/Products";
 import { CartContext } from "context/Cart";
@@ -14,13 +15,13 @@ interface Props {
 
 function ProductPage({ product }: Props) {
   const navigate = useNavigate();
-  const handleHome = () => {
-    navigate(`/productcategory/:id`);
-  };
   const { addProductToCart } = useContext(CartContext);
-
   const [quantity, setQuantity] = useState(1);
   const [showModal, setShowModal] = useState(false);
+
+  const handleHome = () => {
+    navigate(`/productcategory/${product.category}`);
+  };
 
   const handleAddToCart = () => {
     addProductToCart(product, quantity);
@@ -30,6 +31,7 @@ function ProductPage({ product }: Props) {
   const handleCancel = () => {
     setShowModal(false);
   };
+
   const handleOpenModal = () => {
     setShowModal(true);
   };
@@ -57,7 +59,7 @@ function ProductPage({ product }: Props) {
           <h4>{product.name}</h4> <p>${product.price}</p>
         </div>
 
-        <Carousel slides={product.image} />
+        <Slider slides={product.image} />
 
         <div className={styles.line}></div>
         <div className={styles.text}>

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useGATracking from "Hooks/useGATracking";
 import {
@@ -6,25 +6,22 @@ import {
   GoogleAnalyticsEvents,
 } from "interface/GoogleAnalytics";
 
-import { ProductsContext } from "context/Product";
 import { SortingType } from "context/Product/constants";
 import { SORT_TYPE } from "./constants";
-import Item from "./components/Item";
 
 import styles from "./styles.module.scss";
+import Item from "./components/Item";
 
-function ProductIndex() {
+function StoreFront() {
   const [currentSelected, setCurrentSelected] = useState(SortingType.All);
-  const { handleSortProducts: sortProducts } = useContext(ProductsContext);
+
   const gaTracking = useGATracking(GoogleAnalyticsEvents.Store);
   const navigate = useNavigate();
 
   const handleSelect = (id: number) => {
     navigate(`/productcategory/${id}`);
-
     gaTracking(GAStoreActions.Filtered, SortingType[id]);
     setCurrentSelected(id);
-    sortProducts(id);
   };
 
   return (
@@ -46,4 +43,4 @@ function ProductIndex() {
   );
 }
 
-export default ProductIndex;
+export default StoreFront;
