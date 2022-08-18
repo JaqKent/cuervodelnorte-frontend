@@ -14,6 +14,7 @@ import CategoryScreen from "screens/CategoryScreen";
 import HomeScreen from "screens/HomeScreen";
 import Cart from "screens/Cart";
 import AboutUs from "screens/AboutUs";
+import GratitudScreen from "screens/Cart/GratitudScreen";
 
 import { notifications } from "./constant";
 
@@ -34,6 +35,7 @@ function App() {
             <Route path="/product/:id" element={<ProductScreen />} />
             <Route path="/Cart" element={<Cart />} />
             <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/GratitudScreen" element={<GratitudScreen />} />
           </Routes>
         </CartProvider>
       </ProductsProvider>

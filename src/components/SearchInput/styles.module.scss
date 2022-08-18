@@ -5,9 +5,9 @@
 .container {
   @include flex(center, center, row);
   background-color: $primary;
+  gap: 5px;
   height: 60px;
   min-width: 375px;
-  gap: 5px;
 
   .bar {
     @include flex(center, center, row);
@@ -42,11 +42,11 @@
   text-align: center;
 }
 .button {
-  height: 40px;
-  border: 1px solid $black;
-  border-radius: 10px;
   background-color: lighten($dark-navy, 5%);
+  border-radius: 10px;
+  border: 1px solid $black;
   cursor: pointer;
+  height: 40px;
   &:hover {
     background-color: darken($dark-navy, 2%);
     color: $gray;
