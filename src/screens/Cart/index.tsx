@@ -1,11 +1,13 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
+
 import FormInput from "components/FormInput";
 import NoItem from "./components/NoItem";
 import PurchaseList from "./components/PurchaseList";
+
 import { CartContext } from "context/Cart";
 import { Info } from "interface/Purchase";
+
 import { INPUTS } from "./constants";
 import styles from "./styles.module.scss";
 
@@ -16,10 +18,6 @@ function Cart() {
   const onSubmit: SubmitHandler<Info> = (info) => {
     checkout(info);
   };
-  const navigate = useNavigate();
-  /*  const handleGratitud = () => {
-    navigate(`/GratitudScreen`);
-  }; */
 
   const NUMBER_VALIDATION = { min: 999999999, max: 9999999999999 };
 

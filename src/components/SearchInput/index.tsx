@@ -16,7 +16,6 @@ function Searchinput() {
 
   const onSearch = (searchItem: string) => {
     navigate(`/product/${searchItem}`);
-    console.log("search", searchItem);
   };
 
   const filteredProducts = allProducts
