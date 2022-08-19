@@ -1,5 +1,7 @@
 export const categoryId = (id: string | undefined) => {
   switch (id) {
+    case '1':
+      return 'Ofertas';
     case '2':
       return 'Carteras';
 
