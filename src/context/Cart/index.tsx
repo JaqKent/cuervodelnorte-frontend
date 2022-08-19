@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { createContext, ReactNode, useState, useContext } from "react";
 import { notify } from "react-notify-toast";
-import { useNavigate } from "react-router-dom";
 
 import { Product } from "interface/Products";
 
@@ -45,7 +44,6 @@ export default function CartProvider({ children }: { children: ReactNode }) {
   const [loadingText, setLoadingText] = useState("");
   const [productList, setProductList] = useState<CartItem[]>([]);
 
-  const history = useNavigate();
   const { gatherProducts } = useContext(ProductsContext);
   const trackGA = useGATracking(GoogleAnalyticsEvents.Cart);
 
@@ -60,7 +58,7 @@ export default function CartProvider({ children }: { children: ReactNode }) {
         );
       } catch (err) {
         trackGA(GAGlobalActions.Issue);
-        notify.show("Agregar al Carrito", "warning");
+        notify.show("Ultimo Product en Stock", "warning");
       }
     } else {
       trackGA(GAGlobalActions.Issue);

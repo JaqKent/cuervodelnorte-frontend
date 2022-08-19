@@ -26,9 +26,9 @@ function App() {
   return (
     <Router>
       <Notifications options={notifications} />
-      <NavigationBar />
       <ProductsProvider>
         <CartProvider>
+          <NavigationBar />
           <Routes>
             <Route path="/" element={<HomeScreen />} />
             <Route path="/productcategory/:id" element={<CategoryScreen />} />
