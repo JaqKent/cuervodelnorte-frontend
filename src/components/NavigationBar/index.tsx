@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { animated, useTransition } from "react-spring";
+
+import Links from "./components/Links";
+import { CartContext } from "context/Cart";
+
 import menu from "assets/hamburgerIcon.svg";
 import cart from "assets/cartIcon.svg";
 import logo from "assets/logoNegro.png";
 
 import { ANIMATION_CONFIG } from "./constants";
-import Links from "./components/Links";
 import styles from "./styles.module.scss";
 
 function NavigationBar() {
   const [open, setOpen] = useState(false);
   const transition = useTransition(open, ANIMATION_CONFIG);
+  const { productList } = useContext(CartContext);
 
   const navigate = useNavigate();
 
@@ -59,12 +63,14 @@ function NavigationBar() {
           />
         </div>
         <div>
-          <img
-            className={styles.cart}
-            onClick={handleCart}
-            src={cart}
-            alt="Carrito"
-          />
+          <div onClick={handleCart}>
+            {productList.length ? (
+              <p className={styles.cartNumber}>{productList.length}</p>
+            ) : (
+              <></>
+            )}
+          </div>
+          <img className={styles.cart} src={cart} alt="Carrito" />
         </div>
       </div>
     </>
