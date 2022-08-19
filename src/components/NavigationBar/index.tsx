@@ -1,13 +1,15 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { animated, useTransition } from "react-spring";
+
 import menu from "assets/hamburgerIcon.svg";
 import cart from "assets/cartIcon.svg";
 import logo from "assets/logoNegro.png";
 
-import { ANIMATION_CONFIG } from "./constants";
-import { CartContext } from "context/Cart";
 import Links from "./components/Links";
+import { CartContext } from "context/Cart";
+
+import { ANIMATION_CONFIG } from "./constants";
 import styles from "./styles.module.scss";
 
 function NavigationBar() {
@@ -60,20 +62,13 @@ function NavigationBar() {
             alt="logo-cuervo-del-norte"
           />
         </div>
-        <div>
+        <div onClick={handleCart}>
           <div>
-            {productList.length ? (
+            {productList.length && (
               <p className={styles.cartNumber}>{productList.length}</p>
-            ) : (
-              <></>
             )}
           </div>
-          <img
-            className={styles.cart}
-            onClick={handleCart}
-            src={cart}
-            alt="Carrito"
-          />
+          <img className={styles.cart} src={cart} alt="Carrito" />
         </div>
       </div>
     </>
