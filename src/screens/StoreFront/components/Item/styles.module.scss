@@ -1,14 +1,14 @@
-@import "scss/colors";
-@import "scss/mixins";
-@import "scss/variable";
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
 
 .products {
   @include flex(space-between, center, column);
   @include responsive(sm) {
-    background-color: rgba(darken($primary, 15%), 0.8);
     border-radius: 10px;
     margin: 5px 0;
     padding: 10px;
+
     @include responsive(lg) {
       margin: 10px;
       padding: 10px;
@@ -24,26 +24,16 @@
     }
 
     .img {
-      border-radius: 10px;
-      height: 375px;
-      width: 375px;
+      height: 150px;
+      width: 180px;
       @include responsive(md) {
-        height: 300px;
-        width: 300px;
+        height: 250px;
+        width: 350px;
       }
       @include responsive(lg) {
-        height: 400px;
+        height: 300px;
         width: 400px;
       }
-    }
-    .title {
-      @include flex(center, center, row);
-      background-color: rgba(darken($black, 50%), 0.5);
-      height: 25px;
-      left: 35%;
-      margin-top: 15px;
-      position: absolute;
-      width: 100px;
     }
   }
 

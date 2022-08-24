@@ -1,13 +1,13 @@
-@import "scss/colors";
-@import "scss/mixins";
-@import "scss/variable";
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
 
 .container {
   @include flex(space-around, center, column);
   background-color: $black;
   color: $white;
   height: 150px;
-  width: 100vw;
+  min-width: 375px;
   .follow {
     font-size: 14px;
     font-weight: bold;

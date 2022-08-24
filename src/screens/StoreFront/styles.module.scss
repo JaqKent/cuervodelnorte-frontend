@@ -1,10 +1,14 @@
-@import "scss/colors";
-@import "scss/mixins";
-@import "scss/variable";
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
 
 .container {
-  @include flex(center, center, column);
-  background-color: $white;
+  align-items: center;
+  display: grid;
+  gap: 3px;
+  grid-template-columns: auto auto;
+  min-height: 400px;
+  background-color: rgba(darken($primary, 15%), 0.8);
   color: $white;
   min-width: 375px;
   padding-top: 15px;

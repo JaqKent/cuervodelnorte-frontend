@@ -1,15 +1,15 @@
-import { useContext, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useContext, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-import { ProductsContext } from "context/Product";
-import CustomCard from "components/CustomCard";
+import { ProductsContext } from 'context/Product';
+import CustomCard from 'components/CustomCard';
 
-import Spinner from "components/Spinner";
+import Spinner from 'components/Spinner';
 
-import { ReactComponent as Arrow } from "assets/arrowLeft.svg";
-import styles from "./styles.module.scss";
-import NoProductScreen from "./components/NoProductsScreen";
-import { categoryId } from "./utils";
+import { ReactComponent as Arrow } from 'assets/arrowLeft.svg';
+import styles from './styles.module.scss';
+import NoProductScreen from './components/NoProductsScreen';
+import { categoryId } from './utils';
 
 function CategoryScreen() {
   const {
@@ -33,17 +33,17 @@ function CategoryScreen() {
   return (
     <div className={styles.container}>
       {isLoading ? (
-        <Spinner loadingText="Cargando" />
+        <Spinner loadingText='Cargando' />
       ) : (
         <>
           <div className={styles.bar}>
             <div className={styles.arrow}>
-              <Arrow width={15} height={15} fill="#fff" onClick={handleBack} />
+              <Arrow width={15} height={15} fill='#fff' onClick={handleBack} />
             </div>
             <h3>{categoryId(id)}</h3>
             <p>
-              ({categoryStock ? categoryStock : "Sin"}
-              {categoryStock === 1 ? " Producto" : " productos"})
+              ({categoryStock ? categoryStock : 'Sin'}
+              {categoryStock === 1 ? ' Producto' : ' productos'})
             </p>
           </div>
           {products?.length ? (

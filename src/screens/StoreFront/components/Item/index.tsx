@@ -1,4 +1,4 @@
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 interface Props {
   img: string;
@@ -14,9 +14,6 @@ function Item({ name, onClick, isSelected, img }: Props) {
         className={`${isSelected ? styles.selected : styles.section}`}
         onClick={onClick}
       >
-        <div className={styles.title}>
-          <p>{name}</p>
-        </div>
         <img className={styles.img} src={img} alt={name} />
       </div>
     </div>
