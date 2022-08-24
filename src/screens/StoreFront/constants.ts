@@ -1,28 +1,29 @@
 import { SortingType } from 'context/Product/constants';
-import bolso from 'assets/bolso.jpg';
-import cartera from 'assets/cartera.png';
-import kitmate from 'assets/kitMate.jpg';
-import riñonera from 'assets/Riñonera.jpg';
+import ofertas from 'assets/ofertas.jpeg';
+import cartera from 'assets/carteras.jpeg';
+import bolso from 'assets/bolsos.jpeg';
+import accesorios from 'assets/accesorios.jpeg';
+import mochilas from 'assets/mochilas.jpeg';
 
 export const SORT_TYPE = [
   {
     id: SortingType.Wallets,
-    img: riñonera,
+    img: ofertas,
     name: 'Ofertas',
   },
   {
     id: SortingType.Accesories,
-    img: riñonera,
+    img: accesorios,
     name: 'Accesorios',
   },
   {
     id: SortingType.Backpacks,
-    img: bolso,
+    img: mochilas,
     name: 'Mochilas',
   },
   {
     id: SortingType.Bags,
-    img: kitmate,
+    img: bolso,
     name: 'Bolsos',
   },
   {
