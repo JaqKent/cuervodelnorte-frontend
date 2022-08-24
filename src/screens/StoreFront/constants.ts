@@ -7,16 +7,6 @@ import mochilas from 'assets/mochilas.jpeg';
 
 export const SORT_TYPE = [
   {
-    id: SortingType.Wallets,
-    img: ofertas,
-    name: 'Ofertas',
-  },
-  {
-    id: SortingType.Accesories,
-    img: accesorios,
-    name: 'Accesorios',
-  },
-  {
     id: SortingType.Backpacks,
     img: mochilas,
     name: 'Mochilas',
@@ -27,8 +17,18 @@ export const SORT_TYPE = [
     name: 'Bolsos',
   },
   {
+    id: SortingType.Accesories,
+    img: accesorios,
+    name: 'Accesorios',
+  },
+  {
     id: SortingType.Purses,
     img: cartera,
     name: 'Carteras',
+  },
+  {
+    id: SortingType.Wallets,
+    img: ofertas,
+    name: 'Ofertas',
   },
 ];
