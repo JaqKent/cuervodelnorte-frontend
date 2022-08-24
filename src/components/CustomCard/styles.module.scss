@@ -1,6 +1,6 @@
-@import "scss/colors";
-@import "scss/mixins";
-@import "scss/variable";
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
 
 .container {
   @include flex(center, center, column);
@@ -8,8 +8,10 @@
   height: 300px;
   width: 166px;
   .img {
-    height: 205px;
+    height: 200px;
     width: 150px;
+    object-fit: contain;
+    margin: 8px 0 5px 0;
   }
   @include responsive(md) {
     border: 1px solid $black;
