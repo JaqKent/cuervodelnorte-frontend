@@ -1,13 +1,13 @@
-import { useNavigate } from "react-router-dom";
-import { notify } from "react-notify-toast";
+import { useNavigate } from 'react-router-dom';
+import { notify } from 'react-notify-toast';
 import {
   GAProductActions,
   GoogleAnalyticsEvents,
-} from "interface/GoogleAnalytics";
-import useGATracking from "Hooks/useGATracking";
-import { Product } from "interface/Products";
+} from 'interface/GoogleAnalytics';
+import useGATracking from 'Hooks/useGATracking';
+import { Product } from 'interface/Products';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 function CustomCard({ image, name, price, description, _id, stock }: Product) {
   const navigate = useNavigate();
@@ -18,14 +18,14 @@ function CustomCard({ image, name, price, description, _id, stock }: Product) {
     gaTracking(GAProductActions.Entered, name);
   };
 
-  const handleNoStock = () => notify.show("Sin Stock", "warning");
+  const handleNoStock = () => notify.show('Sin Stock', 'warning');
   return (
     <div
       className={`${styles.stock} ${styles.glow} ${
-        stock <= 0 ? styles.noStock : ""
+        stock <= 0 ? styles.noStock : ''
       }`}
       onClick={stock <= 0 ? handleNoStock : handleViewProduct}
-      role="contentinfo"
+      role='contentinfo'
     >
       <div className={styles.container}>
         <img
