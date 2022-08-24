@@ -2,7 +2,7 @@
 @import "scss/mixins";
 @import "scss/variable";
 .container {
-  @include flex(space-around, center, column);
+  @include flex(center, center, column);
   background-image: url("~assets/hillBackground.svg");
   background-position: center;
   background-size: cover;
@@ -11,12 +11,15 @@
   width: 100vw;
 
   h1 {
+    font-size: 40px;
     font-weight: bold;
   }
   h3 {
     color: $white;
+    font-size: 25px;
     font-weight: bold;
     padding: 0 20px;
+    margin: 30px;
   }
   p {
     color: $white;
