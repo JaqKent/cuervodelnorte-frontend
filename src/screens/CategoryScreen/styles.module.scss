@@ -3,11 +3,13 @@
 @import 'scss/variable';
 
 .container {
-  @include flex(center, center, column);
-  width: 100vw;
+  @include flex(flex-start, center, column);
+  min-height: calc(100vh - 210px);
+  min-width: 375px;
 
   .bar {
     @include flex(flex-start, center, row);
+
     background-color: $primary;
     color: $white;
     gap: 10px;

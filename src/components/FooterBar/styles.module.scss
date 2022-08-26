@@ -28,6 +28,7 @@
     @include flex(flex-start, center, row);
     gap: 30px;
     padding-bottom: 17px;
+
     cursor: pointer;
     p {
       display: none;

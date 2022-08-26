@@ -1,22 +1,23 @@
-@import "scss/colors";
-@import "scss/mixins";
-@import "scss/variable";
+@import 'scss/colors';
+@import 'scss/mixins';
+@import 'scss/variable';
 
 .noItems {
-    @include flex(center, center, column);
-  
-    margin-top: 30px;
-    gap: 15px;
-  }
-  
-  .noItemsTitle {
-    color: $black;
-    font-size: 2em;
-    font-weight: $bold;
-    text-align: center;
-  }
-  
-  .noItemsText {
-    color: $black;
-  }
-  
+  @include flex(center, center, column);
+
+  margin-top: 30px;
+  gap: 15px;
+}
+
+.noItemsTitle {
+  padding: 20px 10px;
+  color: $black;
+  font-size: 2em;
+  font-weight: $bold;
+  text-align: center;
+}
+
+.noItemsText {
+  width: 80%;
+  color: $black;
+}
