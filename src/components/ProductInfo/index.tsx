@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import parse from "html-react-parser";
 import Slider from "components/Slider";
 
 import CustomModal from "components/CustomModal";
@@ -67,7 +68,7 @@ function ProductPage({ product }: Props) {
             <h3>{product.name}</h3> <p>${product.price}</p>
           </div>
           <div className={styles.textDown}>
-            <p>{product.description}</p>
+            {parse(product.description || "")}
           </div>
         </div>
         <div className={styles.line}></div>
