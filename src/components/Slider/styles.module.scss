@@ -40,7 +40,10 @@
   }
 }
 .miniatures {
-  @include flex(center, center, row);
+/*   @include flex(center, center, row); */
+display: grid;
+grid-template-columns: auto auto auto auto auto auto ;
+  min-width: 300px;
 
   gap: 10px;
   margin: 10px;

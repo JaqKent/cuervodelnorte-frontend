@@ -21,6 +21,7 @@
     }
     p {
       font-size: 15px;
+      padding-right: 15px;
     }
     .arrow {
       padding-left: 20px;
@@ -35,6 +36,7 @@
     .textUp {
       @include flex(space-between, center, row);
       width: 100%;
+      gap: 5px;
       @include responsive(md) {
         h3 {
           padding-left: 30px;
