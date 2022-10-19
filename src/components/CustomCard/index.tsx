@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import parse from "html-react-parser";
 import { notify } from 'react-notify-toast';
 import {
   GAProductActions,
@@ -36,7 +37,7 @@ function CustomCard({ image, name, price, description, _id, stock }: Product) {
         />
         <div className={styles.text}>
           <h4>{name}</h4>
-          <p>{description}</p>
+          <div className={styles.description}> {parse(description || "")}</div>
           <h3>${price}</h3>
         </div>
       </div>

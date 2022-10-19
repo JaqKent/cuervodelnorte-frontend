@@ -15,7 +15,7 @@
   }
   @include responsive(md) {
     border: 1px solid $black;
-    height: 500px;
+    height: 520px;
     width: 300px;
     .img {
       height: 350px;
@@ -34,7 +34,21 @@
       font-weight: bold;
       margin: 1px;
     }
-    p {
+  
+    @include responsive(md) {
+      height: 140px;
+      width: 280px;
+
+      h4 {
+        font-size: 18px;
+      }
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      
+    }
+    .description{
       font-size: 10px;
       display: -webkit-box;
       -webkit-line-clamp: 3;
@@ -42,23 +56,10 @@
       margin: 1px;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-    @include responsive(md) {
-      height: 140px;
-      width: 280px;
-
-      h4 {
-        font-size: 20px;
-      }
-      h3 {
-        font-size: 18px;
-        font-weight: bold;
-      }
-      p {
-        font-size: 15px;
+      @include responsive(md) { font-size: 15px;
         text-overflow: ellipsis;
-        overflow: hidden;
-      }
+        overflow: hidden;}
+      
     }
   }
 }

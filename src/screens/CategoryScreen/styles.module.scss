@@ -44,10 +44,18 @@
     grid-template-columns: auto auto;
     min-height: 400px;
 
-    @include responsive(md) {
+    @include responsive(lg) {
+      display: grid;
+      grid-template-columns: auto auto auto ;
       padding: 30px 30px;
       gap: 30px;
       min-height: 800px;
+    }
+    
+    @include responsive(xlg) {
+      display: grid;
+      grid-template-columns: auto auto auto auto ;
+      
     }
   }
 }
