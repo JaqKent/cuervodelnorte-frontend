@@ -5,10 +5,10 @@
 .container {
   @include flex(flex-start, stretch, column);
   background-color: $primary;
-  width: 50%;
+  width: 30%;
   border-radius: 0 15px 15px 0;
   height: 100vh;
-  position: fixed;
+  position: fixed;;
   z-index: 9999;
 
   .links {
