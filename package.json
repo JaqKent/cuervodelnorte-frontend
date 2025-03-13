@@ -16,7 +16,7 @@
     "@types/react-notify-toast": "^0.5.3",
     "apisauce": "^2.1.5",
     "html-react-parser": "^3.0.4",
-    "node-sass": "^7.0.1",
+       "sass": "^1.69.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-ga": "^3.3.0",
